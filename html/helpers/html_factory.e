@@ -70,4 +70,9 @@ feature -- <p>
 	new_p do create last_p end
 	last_p: HTML_P attribute create Result end
 
+feature -- <span>
+
+	new_span do create last_span end
+	last_span: HTML_SPAN attribute create Result end
+
 end
