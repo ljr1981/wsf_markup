@@ -109,11 +109,6 @@ feature -- Settings
 			then
 				add_value (a_value)
 			end
-		ensure
-			has: across values as ic
-				some
-					item_to_string_32 (ic.item).same_string (item_to_string_32 (a_value))
-				end
 		end
 
 	add_values (a_values: ARRAY [G])
