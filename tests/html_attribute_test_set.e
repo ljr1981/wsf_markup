@@ -30,8 +30,6 @@ feature -- Test routines
 
 	html_attribute_test
 			-- New test routine
-		note
-			testing:  "execution/isolated"
 		local
 			l_attribute: HTML_ATTRIBUTE [ANY]
 		do

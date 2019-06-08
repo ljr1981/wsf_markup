@@ -4,6 +4,8 @@ note
 		This factory class facilitates features in an effort to
 		speed or ease the create of elements and sub-elements.
 		]"
+	EIS: "name=html_stats", "src=https://css-tricks.com/average-web-page-data-analyzing-8-million-websites/"
+	EIS: "name=detailed_html_stats", "src=https://www.advancedwebranking.com/html/"
 
 class
 	HTML_FACTORY
@@ -47,5 +49,10 @@ feature -- <a>
 	new_hyperlink do create last_hyperlink end
 	last_a: HTML_A attribute create Result end
 	last_hyperlink: like last_a attribute Result := last_a end
+
+feature -- <script>
+
+	new_script do create last_script end
+	last_script: HTML_SCRIPT attribute create Result end
 
 end

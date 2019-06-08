@@ -35,8 +35,6 @@ feature -- Test routines
 
 	html_element_creation_test
 			-- New test routine
-		note
-			testing:  "execution/isolated"
 		do
 			new_html_with_head_and_body
 			assert_strings_equal ("html_head_body", "<html><head></head><body></body></html>", last_html.html_out)
@@ -55,6 +53,9 @@ feature -- Test routines
 
 			new_hyperlink -- Equiv of <a>
 			assert_strings_equal ("a", "<a></a>", last_hyperlink.html_out)
+
+			new_script
+			assert_strings_equal ("script", "<script></script>", last_script.html_out)
 		end
 
 end
