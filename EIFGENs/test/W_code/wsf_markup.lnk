@@ -1,0 +1,14 @@
+-STACK:5000000 -NODEFAULTLIB:libc -STACK:5000000 -NODEFAULTLIB:libc -SUBSYSTEM:WINDOWS -OUT:wsf_markup.exe 
+e1\emain.obj 
+"C:\Program Files\Eiffel Software\EiffelStudio 19.05 GPL\studio\spec\win64\lib\msc_vc140\wkbench.lib" "C:\Program Files\Eiffel Software\EiffelStudio 19.05 GPL\library\net\spec\msc_vc140\win64\lib\net.lib" Mswsock.lib 
+USER32.lib WS2_32.lib ADVAPI32.lib GDI32.lib SHELL32.lib MSIMG32.lib COMDLG32.lib UUID.lib OLE32.lib OLEAUT32.lib COMCTL32.lib MPR.LIB SHLWAPI.LIB WINSPOOL.LIB 
+wsf_markup.res 
+E1\eparents.obj E1\einit.obj E1\ececil.obj E1\evisib.obj E1\enames.obj 
+E1\eskelet.obj E1\eplug.obj E1\ecall.obj E1\efrozen.obj E1\epattern.obj 
+E1\eoption.obj C30\Cobj30.lib C29\Cobj29.lib C28\Cobj28.lib C27\Cobj27.lib 
+C26\Cobj26.lib C25\Cobj25.lib C24\Cobj24.lib C23\Cobj23.lib C22\Cobj22.lib 
+C21\Cobj21.lib C20\Cobj20.lib C19\Cobj19.lib C18\Cobj18.lib C17\Cobj17.lib 
+C16\Cobj16.lib C15\Cobj15.lib C14\Cobj14.lib C13\Cobj13.lib C12\Cobj12.lib 
+C11\Cobj11.lib C10\Cobj10.lib C9\Cobj9.lib C8\Cobj8.lib C7\Cobj7.lib 
+C6\Cobj6.lib C5\Cobj5.lib C4\Cobj4.lib C3\Cobj3.lib C2\Cobj2.lib 
+C1\Cobj1.lib 
