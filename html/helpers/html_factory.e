@@ -60,4 +60,9 @@ feature -- <link>
 	new_link do create last_link end
 	last_link: HTML_LINK attribute create Result end
 
+feature -- <img>
+
+	new_img do create last_img end
+	last_img: HTML_IMG attribute create Result end
+
 end
