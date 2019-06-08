@@ -80,4 +80,9 @@ feature -- <li>
 	new_li do create last_li end
 	last_li: HTML_LI attribute create Result end
 
+feature -- <ul>
+
+	new_ul do create last_ul end
+	last_ul: HTML_UL attribute create Result end
+
 end

@@ -71,6 +71,9 @@ feature -- Test routines
 
 			new_li
 			assert_strings_equal ("li", "<li></li>", last_li.html_out)
+
+			new_ul
+			assert_strings_equal ("ul", "<ul></ul>", last_ul.html_out)
 		end
 
 end
