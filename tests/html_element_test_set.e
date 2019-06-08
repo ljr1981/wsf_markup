@@ -68,6 +68,9 @@ feature -- Test routines
 
 			new_span
 			assert_strings_equal ("span", "<span></span>", last_span.html_out)
+
+			new_li
+			assert_strings_equal ("li", "<li></li>", last_li.html_out)
 		end
 
 end

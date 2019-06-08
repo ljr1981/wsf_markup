@@ -1,5 +1,5 @@
 note
-	title: "Representation of an HTML <script> element."
+	title: "Representation of an HTML <span> element."
 	EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#span"
 
 class

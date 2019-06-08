@@ -75,4 +75,9 @@ feature -- <span>
 	new_span do create last_span end
 	last_span: HTML_SPAN attribute create Result end
 
+feature -- <li>
+
+	new_li do create last_li end
+	last_li: HTML_LI attribute create Result end
+
 end
