@@ -56,6 +56,9 @@ feature -- Test routines
 
 			new_script
 			assert_strings_equal ("script", "<script></script>", last_script.html_out)
+
+			new_link
+			assert_strings_equal ("link", "<link></link>", last_link.html_out)
 		end
 
 end

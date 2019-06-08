@@ -55,4 +55,9 @@ feature -- <script>
 	new_script do create last_script end
 	last_script: HTML_SCRIPT attribute create Result end
 
+feature -- <link>
+
+	new_link do create last_link end
+	last_link: HTML_LINK attribute create Result end
+
 end
