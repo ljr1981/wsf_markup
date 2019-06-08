@@ -65,4 +65,9 @@ feature -- <img>
 	new_img do create last_img end
 	last_img: HTML_IMG attribute create Result end
 
+feature -- <p>
+
+	new_p do create last_p end
+	last_p: HTML_P attribute create Result end
+
 end

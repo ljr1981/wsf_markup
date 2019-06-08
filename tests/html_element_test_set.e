@@ -62,6 +62,9 @@ feature -- Test routines
 
 			new_img
 			assert_strings_equal ("img", "<img></img>", last_img.html_out)
+
+			new_p
+			assert_strings_equal ("p", "<p></p>", last_p.html_out)
 		end
 
 end
