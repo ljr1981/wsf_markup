@@ -53,7 +53,7 @@ feature -- Test routines
 			new_a
 			assert_strings_equal ("a", "<a></a>", last_a.html_out)
 
-			new_hyperlink
+			new_hyperlink -- Equiv of <a>
 			assert_strings_equal ("a", "<a></a>", last_hyperlink.html_out)
 		end
 
