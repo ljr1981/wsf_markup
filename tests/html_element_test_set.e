@@ -85,6 +85,9 @@ feature -- Test routines
 			l_script.set_type ("javascript")
 			assert_strings_equal ("type_is_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
 
+			create l_script.make_with_type ("javascript")
+			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+
 			create l_script.make_with_type_javascript
 			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
 
