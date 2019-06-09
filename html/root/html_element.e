@@ -281,10 +281,8 @@ feature -- Output
 			across
 				attributes as ic
 			loop
+				Result.append_character (' ')
 				Result.append_string_general (ic.item.attribute_out)
-				if not ic.is_last then
-					Result.append_character (' ')
-				end
 			end
 			Result.append_character (Right_enclosing_character)
 		end

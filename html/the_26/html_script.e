@@ -10,6 +10,25 @@ class
 inherit
 	HTML_ELEMENT
 
+create
+	default_create,
+	make_with_type,
+	make_with_type_javascript
+
+feature {NONE} -- Initialization
+
+	make_with_type (a_type: STRING_32)
+			--
+		do
+			set_type (a_type)
+		end
+
+	make_with_type_javascript
+			--
+		do
+			set_type ("javascript")
+		end
+
 feature -- Constants
 
 	tag_name: STRING = "script"

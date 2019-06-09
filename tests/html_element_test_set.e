@@ -76,6 +76,20 @@ feature -- Test routines
 			assert_strings_equal ("ul", "<ul></ul>", last_ul.html_out)
 		end
 
+	html_script_tests
+			-- tests of {HTML_SCRIPT}
+		local
+			l_script: HTML_SCRIPT
+		do
+			create l_script
+			l_script.set_type ("javascript")
+			assert_strings_equal ("type_is_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+
+			create l_script.make_with_type_javascript
+			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+
+		end
+
 end
 
 
