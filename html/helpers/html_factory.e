@@ -84,5 +84,7 @@ feature -- <ul>
 
 	new_ul do create last_ul end
 	last_ul: HTML_UL attribute create Result end
+	new_unordered_list do create last_ul end
+	last_unordered_list: HTML_UL attribute Result := last_ul end
 
 end
