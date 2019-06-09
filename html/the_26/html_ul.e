@@ -10,7 +10,7 @@ inherit
 
 feature -- Constants
 
-	tag_name: STRING = "title"
+	tag_name: STRING = "ul"
 			-- <Precursor>
 
 end
