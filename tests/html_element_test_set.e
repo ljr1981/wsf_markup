@@ -104,6 +104,12 @@ feature -- Test routines
 
 			new_tbody
 			assert_strings_equal ("tbody", "<tbody></tbody>", last_tbody.html_out)
+
+			new_tr
+			assert_strings_equal ("tr", "<tr></tr>", last_tr.html_out)
+
+			new_td
+			assert_strings_equal ("td", "<td></td>", last_td.html_out)
 		end
 
 	html_script_tests

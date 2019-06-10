@@ -137,4 +137,14 @@ feature -- <tbody>
 	new_tbody do create last_tbody end
 	last_tbody: HTML_TBODY attribute create Result end
 
+feature -- <tr>
+
+	new_tr do create last_tr end
+	last_tr: HTML_TR attribute create Result end
+
+feature -- <td>
+
+	new_td do create last_td end
+	last_td: HTML_TD attribute create Result end
+
 end
