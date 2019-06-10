@@ -112,6 +112,14 @@ feature -- Test routines
 			assert_strings_equal ("td", "<td></td>", last_td.html_out)
 		end
 
+	html_usage_tests
+			-- Testing the experience of using this new HTML library.
+		do
+			new_html_with_head_and_body
+			last_html.body.add_subelem (last_div)
+			last_div.add_subelem (last_span)
+		end
+
 	html_script_tests
 			-- tests of {HTML_SCRIPT}
 		local
