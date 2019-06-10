@@ -112,4 +112,9 @@ feature -- <input>
 	new_input do create last_input end
 	last_input: HTML_INPUT attribute create Result end
 
+feature -- <form>
+
+	new_form do create last_form end
+	last_form: HTML_FORM attribute create Result end
+
 end

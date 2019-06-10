@@ -10,7 +10,7 @@ inherit
 
 feature -- Constants
 
-	tag_name: STRING = "h1"
+	tag_name: STRING = "form"
 			-- <Precursor>
 
 feature -- Attributes: action

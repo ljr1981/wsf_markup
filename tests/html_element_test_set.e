@@ -89,6 +89,9 @@ feature -- Test routines
 
 			new_input
 			assert_strings_equal ("input", "<input></input>", last_input.html_out)
+
+			new_form
+			assert_strings_equal ("form", "<form></form>", last_form.html_out)
 		end
 
 	html_script_tests
