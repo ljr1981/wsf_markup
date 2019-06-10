@@ -86,6 +86,9 @@ feature -- Test routines
 
 			new_h2
 			assert_strings_equal ("h2", "<h2></h2>", last_h2.html_out)
+
+			new_input
+			assert_strings_equal ("input", "<input></input>", last_input.html_out)
 		end
 
 	html_script_tests

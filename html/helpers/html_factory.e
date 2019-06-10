@@ -107,4 +107,9 @@ feature -- <h2>
 	new_h2 do create last_h2 end
 	last_h2: HTML_H2 attribute create Result end
 
+feature -- <input>
+
+	new_input do create last_input end
+	last_input: HTML_INPUT attribute create Result end
+
 end
