@@ -97,4 +97,14 @@ feature -- <style>
 	new_style do create last_style end
 	last_style: HTML_STYLE attribute create Result end
 
+feature -- <h1>
+
+	new_h1 do create last_h1 end
+	last_h1: HTML_H1 attribute create Result end
+
+feature -- <h2>
+
+	new_h2 do create last_h2 end
+	last_h2: HTML_H2 attribute create Result end
+
 end

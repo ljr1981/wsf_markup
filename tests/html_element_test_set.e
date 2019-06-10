@@ -80,6 +80,12 @@ feature -- Test routines
 
 			new_style
 			assert_strings_equal ("style", "<style></style>", last_style.html_out)
+
+			new_h1
+			assert_strings_equal ("h1", "<h1></h1>", last_h1.html_out)
+
+			new_h2
+			assert_strings_equal ("h2", "<h2></h2>", last_h2.html_out)
 		end
 
 	html_script_tests
