@@ -98,6 +98,12 @@ feature -- Test routines
 
 			new_strong
 			assert_strings_equal ("strong", "<strong></strong>", last_strong.html_out)
+
+			new_table
+			assert_strings_equal ("table", "<table></table>", last_table.html_out)
+
+			new_tbody
+			assert_strings_equal ("tbody", "<tbody></tbody>", last_tbody.html_out)
 		end
 
 	html_script_tests

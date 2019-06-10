@@ -120,11 +120,21 @@ feature -- <form>
 feature -- <h3>
 
 	new_h3 do create last_h3 end
-	last_h3: HTML_STRONG attribute create Result end
+	last_h3: HTML_H3 attribute create Result end
 
 feature -- <strong>
 
 	new_strong do create last_strong end
 	last_strong: HTML_STRONG attribute create Result end
+
+feature -- <table>
+
+	new_table do create last_table end
+	last_table: HTML_TABLE attribute create Result end
+
+feature -- <tbody>
+
+	new_tbody do create last_tbody end
+	last_tbody: HTML_TBODY attribute create Result end
 
 end
