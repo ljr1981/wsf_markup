@@ -87,4 +87,14 @@ feature -- <ul>
 	new_unordered_list do create last_ul end
 	last_unordered_list: HTML_UL attribute Result := last_ul end
 
+feature -- <br>
+
+	new_br do create last_br end
+	last_br: HTML_BR attribute create Result end
+
+feature -- <style>
+
+	new_style do create last_style end
+	last_style: HTML_STYLE attribute create Result end
+
 end

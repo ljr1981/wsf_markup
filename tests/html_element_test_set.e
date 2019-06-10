@@ -74,6 +74,12 @@ feature -- Test routines
 
 			new_ul
 			assert_strings_equal ("ul", "<ul></ul>", last_ul.html_out)
+
+			new_br
+			assert_strings_equal ("br", "<br></br>", last_br.html_out)
+
+			new_style
+			assert_strings_equal ("style", "<style></style>", last_style.html_out)
 		end
 
 	html_script_tests
