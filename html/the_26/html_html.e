@@ -1,4 +1,4 @@
-note
+﻿note
 	title: "Representation of an HTML element"
 	description: "[
 		The html element represents the root of a document.
@@ -98,6 +98,22 @@ feature -- Operations
 			internal_body := last_body
 		ensure
 			has_head: attached body
+		end
+
+feature -- Attributes: manifest
+
+	manifest: detachable HTML_STRING_ATTRIBUTE
+			--manifest = non-empty URL potentially surrounded by spaces NEW
+			--The address of the document’s application cache manifest (which controls caching of content for offline use).
+
+	set_manifest (a_value: STRING_32)
+			--manifest = non-empty URL potentially surrounded by spaces NEW
+			--The address of the document’s application cache manifest (which controls caching of content for offline use).
+		require
+			not_empty: not a_value.is_empty
+		do
+			create manifest.make_with_value ("manifest", a_value)
+			check attached manifest as al_attribute then attributes.force (al_attribute) end
 		end
 
 end
