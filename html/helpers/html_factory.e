@@ -117,4 +117,14 @@ feature -- <form>
 	new_form do create last_form end
 	last_form: HTML_FORM attribute create Result end
 
+feature -- <h3>
+
+	new_h3 do create last_h3 end
+	last_h3: HTML_STRONG attribute create Result end
+
+feature -- <strong>
+
+	new_strong do create last_strong end
+	last_strong: HTML_STRONG attribute create Result end
+
 end

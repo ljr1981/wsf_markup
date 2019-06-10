@@ -92,6 +92,12 @@ feature -- Test routines
 
 			new_form
 			assert_strings_equal ("form", "<form></form>", last_form.html_out)
+
+			new_h3
+			assert_strings_equal ("h3", "<h3></h3>", last_h3.html_out)
+
+			new_strong
+			assert_strings_equal ("strong", "<strong></strong>", last_strong.html_out)
 		end
 
 	html_script_tests
