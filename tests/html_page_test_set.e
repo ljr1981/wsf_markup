@@ -33,8 +33,8 @@ inherit
 
 feature -- Test routines
 
-	html_page_test_1
-			-- New test routine
+	html_hello_world
+			-- basic hello world
 		note
 			testing:  "execution/isolated"
 		local
