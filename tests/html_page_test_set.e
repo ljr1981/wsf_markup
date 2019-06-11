@@ -44,7 +44,8 @@ feature -- Test routines
 			last_head.add_subelem (meta)
 				last_meta.set_lang ("eng")
 			last_body.add_subelem (div)
-				last_div.set_text ("Hello World!")
+				last_div.add_subelem (h1)
+				last_h1.set_text ("Hello World!")
 
 			create l_file.make_open_write ("test_page_1.html")
 			l_file.put_string (last_html.html_out)
