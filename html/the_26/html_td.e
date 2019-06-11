@@ -8,6 +8,33 @@ class
 inherit
 	HTML_ELEMENT
 
+create
+	default_create,
+	make_with_colspan,
+	make_with_rowspan,
+	make_with_col_row_spans
+
+feature {NONE} -- Initialization
+
+	make_with_colspan (a_value: INTEGER)
+			-- Make with colspan attribute set.
+		do
+			set_colspan (a_value)
+		end
+
+	make_with_rowspan (a_value: INTEGER)
+			-- Make with rowspan attribute set.
+		do
+			set_rowspan (a_value)
+		end
+
+	make_with_col_row_spans (a_colspan, a_rowspan: INTEGER)
+			-- Make with both colspan and rowspan attributes set.
+		do
+			set_colspan (a_colspan)
+			set_rowspan (a_rowspan)
+		end
+
 feature -- Constants
 
 	tag_name: STRING = "td"

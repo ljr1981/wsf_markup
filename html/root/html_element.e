@@ -24,7 +24,10 @@ deferred class
 inherit
 	MU_ITEM
 
-	HTML_FACTORY
+	HTML_ELEMENT_FACTORY
+		rename
+			title as title_new
+		end
 
 feature -- Sub-Elements
 

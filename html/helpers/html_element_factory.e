@@ -8,14 +8,14 @@ note
 	EIS: "name=detailed_html_stats", "src=https://www.advancedwebranking.com/html/"
 
 class
-	HTML_FACTORY
+	HTML_ELEMENT_FACTORY
 
 feature -- <html>
 
 	new_html do create last_html end
 	new_html_with_head do create last_html.make_with_head end
 	new_html_with_body do create last_html.make_with_body end
-	new_html_with_head_and_body do create last_html.make_with_head_and_body end
+	new_html_with_head_and_body do create last_html.make_with_head_and_body; last_head := last_html.head; last_body := last_html.body end
 	last_html: HTML_HTML attribute create Result end
 	html: HTML_HTML do new_html; Result := last_html end
 
@@ -23,19 +23,19 @@ feature -- <head>
 
 	new_head do create last_head end
 	last_head: HTML_HEAD attribute create Result end
-	--head: HTML_HEAD do new_head; Result := last_head end
+	head: HTML_HEAD do new_head; Result := last_head end
 
 feature -- <body>
 
 	new_body do create last_body end
 	last_body: HTML_BODY attribute create Result end
-	--body: HTML_HEAD do new_body; Result := last_body end
+	body: HTML_BODY do new_body; Result := last_body end
 
 feature -- <title>
 
 	new_title do create last_title end
 	last_title: HTML_TITLE attribute create Result end
-	--title: HTML_HEAD do mew_title; Result := last_title end
+	title: HTML_TITLE do new_title; Result := last_title end
 
 feature -- <meta>
 
@@ -171,7 +171,13 @@ feature -- <tr>
 feature -- <td>
 
 	new_td do create last_td end
+	new_td_with_colspan (a_value: INTEGER) do create last_td.make_with_colspan (a_value) end
+	new_td_with_rowspan (a_value: INTEGER) do create last_td.make_with_rowspan (a_value) end
+	new_td_with_col_row_spans (a_colspan, a_rowspan: INTEGER) do create last_td.make_with_col_row_spans (a_colspan, a_rowspan) end
 	last_td: HTML_TD attribute create Result end
 	td: HTML_TD do new_td; Result := last_td end
+	td_with_colspan (a_value: INTEGER) do create last_td.make_with_colspan (a_value) end
+	td_with_rowspan (a_value: INTEGER) do create last_td.make_with_rowspan (a_value) end
+	td_with_col_row_spans (a_colspan, a_rowspan: INTEGER) do create last_td.make_with_col_row_spans (a_colspan, a_rowspan) end
 
 end

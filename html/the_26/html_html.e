@@ -16,6 +16,9 @@ class
 
 inherit
 	HTML_ELEMENT
+		rename
+			head as head_new,
+			body as body_new
 		export {NONE}
 			add_subelem -- hide because we have adders for sub-elements by specification.
 		end

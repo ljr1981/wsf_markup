@@ -26,7 +26,7 @@ inherit
 			default_create
 		end
 
-	HTML_FACTORY
+	HTML_ELEMENT_FACTORY
 		undefine
 			default_create
 		end
@@ -110,6 +110,13 @@ feature -- Test routines
 
 			new_td
 			assert_strings_equal ("td", "<td></td>", last_td.html_out)
+				-- The next are equivs of each other
+			new_td_with_colspan (2)
+			assert_strings_equal ("new_td_with_colspan", "<td colspan=2></td>", last_td.html_out)
+			td_with_colspan (2)
+			assert_strings_equal ("td_with_colspan", "<td colspan=2></td>", last_td.html_out)
+			td.set_colspan (2)
+			assert_strings_equal ("td_set_colspan", "<td colspan=2></td>", last_td.html_out)
 		end
 
 	html_usage_tests
@@ -118,7 +125,17 @@ feature -- Test routines
 			new_html_with_head_and_body
 			last_html.body.add_subelem (div)
 			last_div.add_subelem (span)
+			assert_strings_equal ("version_1", equiv_html_versions, last_html.html_out)
+				-- Another take on the same thing
+			new_html_with_head_and_body
+			last_body.add_subelem (div)
+			last_div.add_subelem (span)
+			assert_strings_equal ("version_1", equiv_html_versions, last_html.html_out)
 		end
+
+	equiv_html_versions: STRING_32 = "[
+<html><head></head><body><div><span></span></div></body></html>
+]"
 
 	html_script_tests
 			-- tests of {HTML_SCRIPT}
