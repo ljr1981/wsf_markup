@@ -31,7 +31,6 @@ feature -- Attributes: colspan
 
 feature -- Attributes: rowspan
 
-
 	rowspan: detachable HTML_NUMERIC_ATTRIBUTE
 			-- rowspan = non-negative integer
 			--	Specifies the number of following rows “spanned” by its td element.
