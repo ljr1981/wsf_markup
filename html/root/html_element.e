@@ -29,6 +29,16 @@ inherit
 			title as title_new
 		end
 
+feature -- Text
+
+	text: detachable STRING_32
+
+	set_text (a_text: like text)
+			-- `set_text' of `a_text' into `text'
+		do
+			text := a_text
+		end
+
 feature -- Sub-Elements
 
 	sub_elements: ARRAYED_LIST [HTML_ELEMENT]
@@ -267,6 +277,9 @@ feature -- Output
 		do
 			create Result.make_empty
 			Result.append_string_general (start_tag_out)
+			if attached text as al_text then
+				Result.append_string_general (al_text)
+			end
 			across
 				sub_elements as ic
 			loop

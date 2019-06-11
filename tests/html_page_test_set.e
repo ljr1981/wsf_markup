@@ -43,10 +43,12 @@ feature -- Test routines
 			new_html_with_head_and_body
 			last_head.add_subelem (meta)
 				last_meta.set_lang ("eng")
+			last_body.add_subelem (div)
+				last_div.set_text ("Hello World!")
 
 			create l_file.make_open_write ("test_page_1.html")
+			l_file.put_string (last_html.html_out)
+			l_file.close
 		end
 
 end
-
-

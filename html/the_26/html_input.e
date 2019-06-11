@@ -24,7 +24,7 @@ feature -- Attributes: type
 			--	The details of the input element are described in the following sections:
 		require
 			not_empty: not a_value.is_empty
-			valid_value: across (<<text_default, text, password, checkbox, radio, button, submit, reset, file,
+			valid_value: across (<<text_default, text_const, password, checkbox, radio, button, submit, reset, file,
 									hidden_const, image, datetime, datetime_local, date, month, time,
 									week, number, range, email, url, search, tel, color>>) as ic some ic.item.out.same_string (a_value) end
 		do
@@ -40,7 +40,7 @@ feature -- Attributes: type-constants
 
 	text_default: STRING_32 = ""
 			-- Empty string = `text'
-	text: STRING_32 = "text"
+	text_const: STRING_32 = "text"
 			-- text
 	password: STRING_32 = "password"
 			-- password
