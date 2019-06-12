@@ -22,6 +22,9 @@ note
 deferred class
 	HTML_ATTRIBUTE [G]
 
+inherit
+	HTML_ELEMENT_FACTORY
+
 feature {NONE} -- Initialization
 
 	make (a_name: like name)
