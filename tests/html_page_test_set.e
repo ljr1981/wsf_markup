@@ -64,16 +64,34 @@ feature -- Carver: Example
 			l_file: PLAIN_TEXT_FILE
 		do
 			new_html_with_head_and_body
+				-- START <HEAD> *******************
 				last_head.add_subelem (meta)
 					last_meta.set_temp_attribute ("charset", "utf-8")
 				last_head.add_subelem (meta)
-					last_meta.set_temp_attributes (<<[{STRING_32} "http_equiv", {STRING_32} "x-ua-compatible"], [{STRING_32} "content", {STRING_32} "ie=edge"]>>)
+					last_meta.set_temp_attributes (<<["http_equiv", "x-ua-compatible"], ["content", "ie=edge"]>>)
 				last_head.add_subelem (title)
-					last_title.set_text ({STRING_32} "Stephen Caver &mdash; Designer &amp; Developer")
+					last_title.set_text ("Stephen Caver &mdash; Designer &amp; Developer")
 				last_head.add_subelem (meta)
-					last_meta.set_temp_attributes (<<[{STRING_32} "name", {STRING_32} "description"], [{STRING_32} "content", {STRING_32} ""]>>)
+					last_meta.set_temp_attributes (<<["name", "description"], ["content", ""]>>)
 				last_head.add_subelem (meta)
-					last_meta.set_temp_attributes (<<[{STRING_32} "name", {STRING_32} "viewport"], [{STRING_32} "content", {STRING_32} "width=device-width, initial-scale=1"]>>)
+					last_meta.set_temp_attributes (<<["name", "viewport"], ["content", "width=device-width, initial-scale=1"]>>)
+
+				last_head.add_subelem (link)
+					last_link.set_rel (<<"apple-touch-icon">>)
+					last_link.set_href ("apple-touch-icon.png")
+				-- <!-- Place favicon.ico in the root directory -->
+
+				last_head.add_subelem (link)
+					last_link.set_rel (<<"stylesheet">>)
+					last_link.set_href ("/css/main.css")
+				last_head.add_subelem (script)
+					last_script.set_src ("/js/vendor/modernizr-2.8.3-min.js")
+				last_head.add_subelem (script)
+					last_script.set_src ("https://use.typekit.net/igu3ymi.js")
+				last_head.add_subelem (script)
+					last_script.set_text ("try{Typekit.load({ async: true });}catch(e){}")
+				-- END <HEAD> *******************
+
 				-- Save file
 			create l_file.make_open_write ("carver_example.html")
 			l_file.put_string (last_html.html_out)
@@ -82,6 +100,9 @@ feature -- Carver: Example
 
 feature {NONE} -- Carver: HTML
 
+		-- The follow HTML is an example taken from the EIS link shown in the test above.
+		--	The test code (above) follows this HTML (below). Read the test code as it
+		--	follows along with the actual HTML to be generated as shown below.
 	carver_html: STRING_32 = "[
 <!doctype html>
 <html class="no-js" lang="">

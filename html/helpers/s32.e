@@ -1,8 +1,14 @@
 note
-	description: "Summary description for {S32}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
+	description: "[
+		This class changes nothing from STRING_32
+		It is here just to make things easier to type
+		and shorter to read and more compact in code.
+		
+		Other versions might be:
+		S8 = STRING, STRING_8
+		RSG = READABLE_STRING_GENERAL
+		RFG32 = READABLE_STRING_GENERAL_32
+		]"
 
 class
 	S32
