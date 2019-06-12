@@ -98,6 +98,7 @@ feature -- <p>
 	new_p do create last_p end
 	last_p: HTML_P attribute create Result end
 	p: HTML_P do new_p; Result := last_p end
+	p_with_text (a_text: STRING_32): HTML_P do new_p; Result := last_p; last_p.set_text (a_text) end
 
 feature -- <span>
 
@@ -219,5 +220,19 @@ feature -- <header>
 	last_header: HTML_HEADER attribute create Result end
 	header: HTML_HEADER do new_header; Result := last_header end
 	header_with_class (a_class: STRING_32): HTML_HEADER do new_header; Result := last_header; last_header.set_classifications (<<a_class>>) end
+
+feature -- <figure>
+
+	new_figure do create last_figure end
+	last_figure: HTML_FIGURE attribute create Result end
+	figure: HTML_FIGURE do new_figure; Result := last_figure end
+--	header_with_class (a_class: STRING_32): HTML_HEADER do new_header; Result := last_header; last_header.set_classifications (<<a_class>>) end
+
+feature -- <figcaption>
+
+	new_figcaption do create last_figcaption end
+	last_figcaption: HTML_FIGCAPTION attribute create Result end
+	figcaption: HTML_FIGCAPTION do new_figcaption; Result := last_figcaption end
+--	header_with_class (a_class: STRING_32): HTML_HEADER do new_header; Result := last_header; last_header.set_classifications (<<a_class>>) end
 
 end

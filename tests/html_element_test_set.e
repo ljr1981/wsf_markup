@@ -126,6 +126,12 @@ feature -- Test routines
 
 			new_header
 			assert_strings_equal ("header", "<header></header>", last_header.html_out)
+
+			new_figure
+			assert_strings_equal ("figure", "<figure></figure>", last_figure.html_out)
+
+			new_figcaption
+			assert_strings_equal ("figcaption", "<figcaption></figcaption>", last_figcaption.html_out)
 		end
 
 	html_usage_tests

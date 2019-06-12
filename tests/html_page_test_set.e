@@ -125,7 +125,9 @@ feature -- Carver: Example
 								last_header.add_subelem (h1_with_text ("I am Stephen Caver. A designer &amp; developer in Austin,&nbsp;TX. I build&nbsp;websites."))
 							last_section.add_subelem (div_with_class ("sc-home-hero__body"))
 								last_div.add_subelem (div_with_class ("sc-home-hero__body-copy"))
-									last_div.add_subelem (h2)
+									last_div.add_subelem (h2_with_text ("Crafting the&nbsp;Web"))
+										last_div.add_subelem (p_with_text ({STRING_32} "Whatever the craft demands, that’s what I desire to do. I build websites. That means writing, it means architecting, coding, and it has always meant design."))
+										last_div.add_subelem (p_with_text ({STRING_32} "The craft of the web is knowing, doing, and loving all these things and putting the user experience first."))
 					-- END <SECTION> *********************
 
 
