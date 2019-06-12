@@ -61,8 +61,10 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
 ```
 The call to `last_main.add_subelem ( ... )` is what will take our `section` object and add it to the `main`.
 
-To create our `section` object, we make a call to `{HTML_ELEMENT_FACTORY}.section_with_class (a_class_name: STRING_32)`.
+To create our `section` object, we make a call to `section_with_class (a_class_name: STRING_32)`.
 
 This call will create an `{HTML_SECTION}` object and set its `class=` attribute to the value of `a_class_name`. The resulting object will later generate the needed HTML markup when its `html_out` feature is called.
 
 **NOTE: Generating an entire segment of HTML—including nested HTML—is performed by a call to `html_out` on any {HTML_ELEMENT}.**
+## What Makes Time Travel Possible!
+Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
