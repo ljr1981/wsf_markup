@@ -80,4 +80,28 @@ All of the HTML tag elements in the library are represented in the `{HTML_ELEMEN
 3. A `tag` query function routine, which calls `new_tag` and sets its `Result` to `last_tag`.
 ## Extended Creations
 Beyond the three staple feature patterns above, there are various *forms* of creation. We have already seen a few examples in the sample Eiffel code above (the big block). Usually, these calls are designed to create the HTML object and then set common attributes.
+
 **NOTE: Each attribute creation has Design-by-Contract code that helps to enforce HTML-5 specification constraints on attribute values.**
+
+## Note about Documentation
+The library makes extensive use of Eiffel class `note` clauses and `EIS` (*Eiffel Information System*) links. For example: Take a look at the {HTML_SECTION} class, which represents the `<section>` HTML tag.
+```C#
+note
+	title: "Representation of an HTML <section> element."
+	EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#section"
+	EIS: "name=w3schools_main", "src=https://www.w3schools.com/tags/tag_section.asp"
+
+class
+	HTML_SECTION
+
+inherit
+	HTML_ELEMENT
+
+feature -- Constants
+
+	tag_name: STRING = "section"
+			-- <Precursor>
+
+end
+```
+The two EIS link give you quick access to Internet resources describing the tag class you are looking at (`<section>` in this case). There is a link to the w3.org specifications (if applicable) and to the w3schools.com link, which has general training documentation and other material. Again—there are lots of EIS links at both the class and feature levels. This is also true of HTML tag attribute classes.
