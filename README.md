@@ -68,3 +68,5 @@ This call will create an `{HTML_SECTION}` object and set its `class=` attribute 
 **NOTE: Generating an entire segment of HTML—including nested HTML—is performed by a call to `html_out` on any {HTML_ELEMENT}.**
 ## What Makes Time Travel Possible!
 Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
+
+![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Logo Title Text 1")
