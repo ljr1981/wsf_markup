@@ -128,6 +128,10 @@ feature -- Carver: Example
 									last_div.add_subelem (h2_with_text ("Crafting the&nbsp;Web"))
 										last_div.add_subelem (p_with_text ({STRING_32} "Whatever the craft demands, that’s what I desire to do. I build websites. That means writing, it means architecting, coding, and it has always meant design."))
 										last_div.add_subelem (p_with_text ({STRING_32} "The craft of the web is knowing, doing, and loving all these things and putting the user experience first."))
+							last_section.add_subelem (figure_with_class ("sc-home-hero__figure"))
+								last_figure.add_subelem (div)
+									last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
+									last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
 					-- END <SECTION> *********************
 
 

@@ -92,6 +92,7 @@ feature -- <img>
 	last_img: HTML_IMG attribute create Result end
 	img: HTML_IMG do new_img; Result := last_img end
 	img_with_class_src_alt (a_class, a_src, a_alt: STRING_32): HTML_IMG do new_img; Result := last_img; last_img.set_class_src_alt (a_class, a_src, a_alt) end
+	img_with_src_alt (a_src, a_alt: STRING_32): HTML_IMG do new_img; Result := last_img; last_img.set_src_alt (a_src, a_alt) end
 
 feature -- <p>
 
@@ -226,13 +227,13 @@ feature -- <figure>
 	new_figure do create last_figure end
 	last_figure: HTML_FIGURE attribute create Result end
 	figure: HTML_FIGURE do new_figure; Result := last_figure end
---	header_with_class (a_class: STRING_32): HTML_HEADER do new_header; Result := last_header; last_header.set_classifications (<<a_class>>) end
+	figure_with_class (a_class: STRING_32): HTML_FIGURE do new_figure; Result := last_figure; last_figure.set_classifications (<<a_class>>) end
 
 feature -- <figcaption>
 
 	new_figcaption do create last_figcaption end
 	last_figcaption: HTML_FIGCAPTION attribute create Result end
 	figcaption: HTML_FIGCAPTION do new_figcaption; Result := last_figcaption end
---	header_with_class (a_class: STRING_32): HTML_HEADER do new_header; Result := last_header; last_header.set_classifications (<<a_class>>) end
+	figcaption_with_text (a_text: STRING_32): HTML_FIGCAPTION do new_figcaption; Result := last_figcaption; last_figcaption.set_text (a_text) end
 
 end
