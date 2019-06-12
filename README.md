@@ -55,7 +55,7 @@ Let's examine an HTML markup line and compare it to the Eiffel wsf_markup code w
 ```html
 <section class="sc-home-hero">
 ```
-Here, we have a <section> tag with a class attribute. This tag is enclosed in an already created <main> tag, which is represented as `last_main`, when referencing a tag already created (and ready for later generation).
+Here, we have a `<section>` tag with a class attribute. This tag is enclosed in an already created `<main>` tag, which is represented as `last_main`, when referencing a tag already created (and ready for later generation).
 ```c#
 last_main.add_subelem (section_with_class ("sc-home-hero"))
 ```
