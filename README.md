@@ -29,3 +29,20 @@ Let us say we have a code snippet of HTML that we want to generate using Eiffel 
           </figure>
         </section>
 ```
+The Eiffel code used to generate this code is:
+```eiffel
+last_main.add_subelem (section_with_class ("sc-home-hero"))
+   last_section.add_subelem (header_with_class ("sc-home-hero__header"))
+      last_header.add_subelem (div_with_class ("logo"))
+         last_div.add_subelem (img_with_class_src_alt ("sc-home-hero__logo", "/img/logo.svg", "Stephen Carver"))
+            last_header.add_subelem (h1_with_text ("I am Stephen Caver. A designer &amp; developer in Austin,&nbsp;TX. I build&nbsp;websites."))
+   last_section.add_subelem (div_with_class ("sc-home-hero__body"))
+      last_div.add_subelem (div_with_class ("sc-home-hero__body-copy"))
+         last_div.add_subelem (h2_with_text ("Crafting the&nbsp;Web"))
+            last_div.add_subelem (p_with_text ({STRING_32} "Whatever the craft demands, that’s what I desire to do. I build websites. That means writing, it means architecting, coding, and it has always meant design."))
+            last_div.add_subelem (p_with_text ({STRING_32} "The craft of the web is knowing, doing, and loving all these things and putting the user experience first."))
+   last_section.add_subelem (figure_with_class ("sc-home-hero__figure"))
+      last_figure.add_subelem (div)
+         last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
+         last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
+```
