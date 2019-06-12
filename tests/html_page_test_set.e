@@ -64,7 +64,8 @@ feature -- Carver: Example
 			l_file: PLAIN_TEXT_FILE
 		do
 			new_html_with_head_and_body
-
+				last_head.add_subelem (meta)
+					last_meta.set_temp_attribute ("charset", "utf-8")
 				-- Save file
 			create l_file.make_open_write ("carver_example.html")
 			l_file.put_string (last_html.html_out)

@@ -63,6 +63,14 @@ feature -- Attributes
 			create Result.make (0)
 		end
 
+feature -- Temp Attributes
+
+	set_temp_attribute (a_name, a_value: STRING_32)
+			-- Set a temporary string attribute into `attributes'.
+		do
+			attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (a_name, a_value))
+		end
+
 feature -- Global Attributes
 
 	accesskey: detachable HTML_STRING_ATTRIBUTE

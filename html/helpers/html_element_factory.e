@@ -10,6 +10,20 @@ note
 class
 	HTML_ELEMENT_FACTORY
 
+feature -- Temporary HTML builder
+
+	temp_element (a_tag_name: STRING; a_attributes: ARRAY [HTML_ATTRIBUTE [ANY]]): HTML_TEMP_ELEMENT
+			-- A convenience function for creating HTML elements, which do not
+			--	yet exists in the library.
+		do
+			create Result.make (a_tag_name)
+			across
+				a_attributes as ic
+			loop
+				Result.attributes.force (ic.item)
+			end
+		end
+
 feature -- <html>
 
 	new_html do create last_html end
