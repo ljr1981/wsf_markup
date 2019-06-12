@@ -71,6 +71,16 @@ feature -- Temp Attributes
 			attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (a_name, a_value))
 		end
 
+	set_temp_attributes (a_key_values: ARRAY [TUPLE [ti_name, ti_value: STRING_32]])
+			-- Set a temporary string attribute into `attributes'.
+		do
+			across
+				a_key_values as ic
+			loop
+				attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (ic.item.ti_name, ic.item.ti_value))
+			end
+		end
+
 feature -- Global Attributes
 
 	accesskey: detachable HTML_STRING_ATTRIBUTE
