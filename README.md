@@ -69,4 +69,15 @@ This call will create an `{HTML_SECTION}` object and set its `class=` attribute 
 ## What Makes Time Travel Possible!
 Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
 
+In the example below, pay special attention to how the calls are made relative to the HTML being generated.
 ![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Logo Title Text 1")
+The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the `{HTML_ELEMENT_FACTORY}` for more information (see the `div` feature).
+
+## Basic Pattern
+All of the HTML tag elements in the library are represented in the `{HTML_ELEMENT_FACTORY}` class. There are essentially three staple features:
+1. A `new_tag` routine, which creates an instance of the tag object and then assigns it to the `last_tag` attribute.
+2. A `last_tag` attribute, which is a "self-initializing` attribute, which calls the `new_tag` feature if it is not yet attached.
+3. A `tag` query function routine, which calls `new_tag` and sets its `Result` to `last_tag`.
+## Extended Creations
+Beyond the three staple feature patterns above, there are various *forms* of creation. We have already seen a few examples in the sample Eiffel code above (the big block). Usually, these calls are designed to create the HTML object and then set common attributes.
+**NOTE: Each attribute creation has Design-by-Contract code that helps to enforce HTML-5 specification constraints on attribute values.**
