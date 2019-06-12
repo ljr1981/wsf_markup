@@ -52,7 +52,7 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
 ```
 This generated code can now be examined in a browser (ex: Chrome -> inspect).
 
-![alt text](docs/img/ex_last_section_adding_div_tag.JPG "generated section tag and content in Chrome inspect tool.")
+![alt text](docs/img/ex_in_chrome_inspect.JPG "generated section tag and content in Chrome inspect tool.")
 
 ## Side-by-Side
 Let's examine an HTML markup line and compare it to the Eiffel wsf_markup code which will generate it.
