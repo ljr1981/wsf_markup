@@ -30,7 +30,7 @@ Let us say we have a code snippet of HTML that we want to generate using Eiffel 
         </section>
 ```
 The Eiffel code used to generate this code is:
-```eiffel
+```c#
 last_main.add_subelem (section_with_class ("sc-home-hero"))
    last_section.add_subelem (header_with_class ("sc-home-hero__header"))
       last_header.add_subelem (div_with_class ("logo"))
