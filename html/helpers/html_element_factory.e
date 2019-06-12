@@ -236,4 +236,11 @@ feature -- <figcaption>
 	figcaption: HTML_FIGCAPTION do new_figcaption; Result := last_figcaption end
 	figcaption_with_text (a_text: STRING_32): HTML_FIGCAPTION do new_figcaption; Result := last_figcaption; last_figcaption.set_text (a_text) end
 
+feature -- <aside>
+
+	new_aside do create last_aside end
+	last_aside: HTML_FIGCAPTION attribute create Result end
+	aside: HTML_FIGCAPTION do new_aside; Result := last_aside end
+	aside_with_paragraph_text (a_text: STRING_32): HTML_FIGCAPTION do new_aside; Result := last_aside; last_aside.add_subelem (p_with_text (a_text)) end
+
 end
