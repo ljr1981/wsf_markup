@@ -127,3 +127,21 @@ The first call to `temp_element` creates a new element, which will be generated 
 The second call, will generate the same tag with an attribute: `<tag_name attr-name="string_value">`.
 
 This is just a temporary fix to yet-to-be-coded HTML element tags. Once needed, these tags are easily coded with their attributes and added to the library (including the factory and testing).
+
+**NOTE:** If you need to use the `temp_element` call and subsequently need to access this element, you have two basic approaches.
+
+1. Use the `last_temp` feature.
+2. Create a local (e.g. `local l_temp_element`) as a reference to the created object.
+
+You can use option #1 (above) if you need to work with the temp element tag one at a time. The moment you require two temp tags, you will need to create at least one local.
+
+## A Note about Style
+While each `{HTML_ELEMENT}` inherits from `{HTML_ELEMENT_FACTORY}` you may want to refrain from making dot-calls to access factory calls on factory calls. For example:
+
+```C#
+last_div.last_div.add_subelem (last_div) -- THIS CODE IS DANGEROUS and a CIRCULAR reference.
+```
+
+The code (above) inserts a `Current` `last_div` object reference into one of its factory-generated `last_div` objects `sub_elements` array. I cannot vouch for what will happen. It seems the worst will be some kind of repeating call that will exhaust the call-stack. Just be aware that as it stands, you can make code structures like this that will get you into trouble.
+
+The safest way (I have found) so far is to just use the factory of the root class you are in and never use a factory call on a factory object.
