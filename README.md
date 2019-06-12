@@ -1,5 +1,8 @@
 # wsf_markup - An Eiffel-based HTML Generation Library
 
+## STATUS
+This library is **UNDER CONSTRUCTION!** Please use with caution. I am actively making changes and updates and cannot make guarentees about stability of code if you use this library.
+
 ## Eiffel Only
 This library is written in pure Eiffel code and Eiffel only. There are no other technologies required for this "stack". The library is designed to be consumed together with the Eiffel Web Framework.
 ## Purpose
