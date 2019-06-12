@@ -143,6 +143,7 @@ feature -- <h2>
 	new_h2 do create last_h2 end
 	last_h2: HTML_H2 attribute create Result end
 	h2: HTML_H2 do new_h2; Result := last_h2 end
+	h2_with_text (a_text: STRING_32): HTML_H2 do new_h2; Result := last_h2; last_h2.set_text (a_text) end
 
 feature -- <input>
 
@@ -161,6 +162,7 @@ feature -- <h3>
 	new_h3 do create last_h3 end
 	last_h3: HTML_H3 attribute create Result end
 	h3: HTML_H3 do new_h3; Result := last_h3 end
+	h3_with_text (a_text: STRING_32): HTML_H3 do new_h3; Result := last_h3; last_h3.set_text (a_text) end
 
 feature -- <strong>
 

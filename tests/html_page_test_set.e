@@ -123,6 +123,9 @@ feature -- Carver: Example
 								last_header.add_subelem (div_with_class ("logo"))
 									last_div.add_subelem (img_with_class_src_alt ("sc-home-hero__logo", "/img/logo.svg", "Stephen Carver"))
 								last_header.add_subelem (h1_with_text ("I am Stephen Caver. A designer &amp; developer in Austin,&nbsp;TX. I build&nbsp;websites."))
+							last_section.add_subelem (div_with_class ("sc-home-hero__body"))
+								last_div.add_subelem (div_with_class ("sc-home-hero__body-copy"))
+									last_div.add_subelem (h2)
 					-- END <SECTION> *********************
 
 
