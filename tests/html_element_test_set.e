@@ -117,6 +117,15 @@ feature -- Test routines
 			assert_strings_equal ("td_with_colspan", "<td colspan=2></td>", last_td.html_out)
 			td.set_colspan (2)
 			assert_strings_equal ("td_set_colspan", "<td colspan=2></td>", last_td.html_out)
+
+			new_main
+			assert_strings_equal ("main", "<main></main>", last_main.html_out)
+
+			new_section
+			assert_strings_equal ("section", "<section></section>", last_section.html_out)
+
+			new_header
+			assert_strings_equal ("header", "<header></header>", last_header.html_out)
 		end
 
 	html_usage_tests

@@ -13,6 +13,16 @@ feature -- Constants
 	tag_name: STRING = "img"
 			-- <Precursor>
 
+feature -- Settings
+
+	set_class_src_alt (a_class, a_src, a_alt: STRING_32)
+			--
+		do
+			set_classifications (<<a_class>>)
+			set_src (a_src)
+			set_alt (a_alt)
+		end
+
 feature -- Attributes: src
 
 	src: detachable HTML_STRING_ATTRIBUTE

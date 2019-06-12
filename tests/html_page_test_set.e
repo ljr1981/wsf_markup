@@ -96,8 +96,34 @@ feature -- Carver: Example
 
 				-- START <MAIN> *******************
 				last_body.add_subelem (main)
-					last_main.add_subelem (section)
-						last_section.set_classifications (<<"sc-home-hero">>)
+					-- START <SECTION> *******************
+					--        <section class="sc-home-hero">
+					--          <header class="sc-home-hero__header">
+					--            <div class="logo">
+					--              <img class="sc-home-hero__logo" src="/img/logo.svg" alt="Stephen Caver">
+					--            </div>
+					--            <h1>I’m Stephen Caver. A designer &amp; developer in Austin,&nbsp;TX. I build&nbsp;websites.</h1>
+					--          </header>
+					--          <div class="sc-home-hero__body">
+					--            <div class="sc-home-hero__body-copy">
+					--              <h2>Crafting the&nbsp;Web</h2>
+					--              <p>Whatever the craft demands, that’s what I desire to do. I build websites. That means writing, it means architecting, coding, and it has always meant design.</p>
+					--              <p>The craft of the web is knowing, doing, and loving all these things and putting the user experience first.</p>
+					--            </div>
+					--          </div>
+					--          <figure class="sc-home-hero__figure">
+					--            <div>
+					--              <img src="/img/hero-photo.png" alt="Photo of Stephen">
+					--              <figcaption>Head-cover enthusiast</figcaption>
+					--            </div>
+					--          </figure>
+					--        </section>
+					last_main.add_subelem (section_with_class ("sc-home-hero"))
+							last_section.add_subelem (header_with_class ("sc-home-hero__header"))
+								last_header.add_subelem (div_with_class ("logo"))
+									last_div.add_subelem (img_with_class_src_alt ("sc-home-hero__logo", "/img/logo.svg", "Stephen Carver"))
+								last_header.add_subelem (h1_with_text ("I am Stephen Caver. A designer &amp; developer in Austin,&nbsp;TX. I build&nbsp;websites."))
+					-- END <SECTION> *********************
 
 
 				-- END <MAIN> *********************

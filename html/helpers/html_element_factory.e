@@ -63,6 +63,7 @@ feature -- <div>
 	new_div do create last_div end
 	last_div: HTML_DIV attribute create Result end
 	div: HTML_DIV do new_div; Result := last_div end
+	div_with_class (a_class: STRING_32): HTML_DIV do new_div; Result := last_div; last_div.set_classifications (<<a_class>>) end
 
 feature -- <a>
 
@@ -90,6 +91,7 @@ feature -- <img>
 	new_img do create last_img end
 	last_img: HTML_IMG attribute create Result end
 	img: HTML_IMG do new_img; Result := last_img end
+	img_with_class_src_alt (a_class, a_src, a_alt: STRING_32): HTML_IMG do new_img; Result := last_img; last_img.set_class_src_alt (a_class, a_src, a_alt) end
 
 feature -- <p>
 
@@ -132,8 +134,9 @@ feature -- <style>
 feature -- <h1>
 
 	new_h1 do create last_h1 end
-	last_h1: HTML_H1 attribute create Result end
+	last_h1 alias "@@h1": HTML_H1 attribute create Result end
 	h1: HTML_H1 do new_h1; Result := last_h1 end
+	h1_with_text (a_text: STRING_32): HTML_H1 do new_h1; Result := last_h1; last_h1.set_text (a_text) end
 
 feature -- <h2>
 
@@ -206,5 +209,13 @@ feature -- <section>
 	new_section do create last_section end
 	last_section: HTML_SECTION attribute create Result end
 	section: HTML_SECTION do new_section; Result := last_section end
+	section_with_class (a_class: STRING_32): HTML_SECTION do new_section; Result := last_section; last_section.set_classifications (<<a_class>>) end
+
+feature -- <header>
+
+	new_header do create last_header end
+	last_header: HTML_HEADER attribute create Result end
+	header: HTML_HEADER do new_header; Result := last_header end
+	header_with_class (a_class: STRING_32): HTML_HEADER do new_header; Result := last_header; last_header.set_classifications (<<a_class>>) end
 
 end
