@@ -7,6 +7,8 @@ The purpose of this library is to write Eiffel code that faithfully generates we
 ## Quick Demo
 Let us say we have a code snippet of HTML that we want to generate using Eiffel by way of the wsf_markup library.
 ```html
+<main>
+...
         <section class="sc-home-hero">
           <header class="sc-home-hero__header">
             <div class="logo">
@@ -28,6 +30,8 @@ Let us say we have a code snippet of HTML that we want to generate using Eiffel 
             </div>
           </figure>
         </section>
+...
+<main>
 ```
 The Eiffel code used to generate this code is:
 ```c#
@@ -45,4 +49,11 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
       last_figure.add_subelem (div)
          last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
          last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
+```
+## Side-by-Side
+```html
+<section class="sc-home-hero">
+```
+```c#
+last_main.add_subelem (section_with_class ("sc-home-hero"))
 ```
