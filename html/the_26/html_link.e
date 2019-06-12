@@ -46,7 +46,7 @@ feature -- Attributes: rel
 			--	Each token must be either a link type defined in the HTML5 specification
 			--	or a registered extension to the predefined set of link types [HTML5].
 
-	set_rel (a_values: ARRAY [STRING_32])
+	set_rels (a_values: ARRAY [STRING_32])
 			--rel = set of space-separated tokens
 			--	A set of tokens that specify the relationship between the document
 			--	containing the link and the destination indicated by the link.
@@ -66,9 +66,9 @@ feature -- Attributes: rel
 		end
 
 	set_link_relationships (a_values: ARRAY [STRING_32])
-			-- See `set_rel' above
+			-- See `set_rels' above
 		do
-			set_rel (a_values)
+			set_rels (a_values)
 		end
 
 feature -- Attributes: hreflang

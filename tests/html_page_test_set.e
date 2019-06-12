@@ -79,12 +79,12 @@ feature -- Carver: Example
 					last_meta.set_temp_attributes (<<["name", "viewport"], ["content", "width=device-width, initial-scale=1"]>>)
 
 				last_head.add_subelem (link)
-					last_link.set_rel (<<"apple-touch-icon">>)
+					last_link.set_rels (<<"apple-touch-icon">>)
 					last_link.set_href ("apple-touch-icon.png")
 				-- <!-- Place favicon.ico in the root directory -->
 
 				last_head.add_subelem (link)
-					last_link.set_rel (<<"stylesheet">>)
+					last_link.set_rels (<<"stylesheet">>)
 					last_link.set_href ("/css/main.css")
 				last_head.add_subelem (script)
 					last_script.set_src ("/js/vendor/modernizr-2.8.3-min.js")
