@@ -195,4 +195,16 @@ feature -- <td>
 	td_with_rowspan (a_value: INTEGER) do create last_td.make_with_rowspan (a_value) end
 	td_with_col_row_spans (a_colspan, a_rowspan: INTEGER) do create last_td.make_with_col_row_spans (a_colspan, a_rowspan) end
 
+feature -- <main>
+
+	new_main do create last_main end
+	last_main: HTML_MAIN attribute create Result end
+	main: HTML_MAIN do new_main; Result := last_main end
+
+feature -- <section>
+
+	new_section do create last_section end
+	last_section: HTML_SECTION attribute create Result end
+	section: HTML_SECTION do new_section; Result := last_section end
+
 end
