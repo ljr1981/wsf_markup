@@ -9,6 +9,7 @@ inherit
 	HTML_ELEMENT
 
 create
+	default_create,
 	make
 
 feature {NONE} -- Initialization

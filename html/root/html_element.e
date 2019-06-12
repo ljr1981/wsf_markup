@@ -98,7 +98,7 @@ feature -- Global Attributes
 			--	label represents a keyboard shortcut which UAs can use to activate the element
 			--	or give focus to the element.
 
-	set_accesskey (a_values: ARRAY [STRING_32])
+	set_accesskeys (a_values: ARRAY [STRING_32])
 			-- A key label or list of key labels with which to associate the element; each key
 			--	label represents a keyboard shortcut which UAs can use to activate the element
 			--	or give focus to the element.
@@ -112,7 +112,7 @@ feature -- Global Attributes
 	classification: detachable HTML_STRING_ATTRIBUTE
 			-- A name of a classification, or list of names of classifications, to which the element belongs.
 
-	set_classification (a_values: ARRAY [STRING_32])
+	set_classifications (a_values: ARRAY [STRING_32])
 			-- A name of a classification, or list of names of classifications, to which the element belongs.
 		note
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"

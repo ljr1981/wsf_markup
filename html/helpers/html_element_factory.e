@@ -23,6 +23,7 @@ feature -- Temporary HTML builder
 				Result.attributes.force (ic.item)
 			end
 		end
+	last_temp: HTML_TEMP_ELEMENT attribute create Result end
 
 feature -- <html>
 

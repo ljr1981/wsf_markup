@@ -62,6 +62,8 @@ feature -- Carver: Example
 			EIS: "name=carver_example", "src=http://stephencaver.com/"
 		local
 			l_file: PLAIN_TEXT_FILE
+			l_main,
+			l_section: HTML_TEMP_ELEMENT
 		do
 			new_html_with_head_and_body
 				-- START <HEAD> *******************
@@ -91,6 +93,15 @@ feature -- Carver: Example
 				last_head.add_subelem (script)
 					last_script.set_text ("try{Typekit.load({ async: true });}catch(e){}")
 				-- END <HEAD> *******************
+
+				-- START <MAIN> *******************
+				l_main := temp_element ("main", <<>>)
+				last_body.add_subelem (l_main)
+					l_section := temp_element ("section", <<>>)
+					l_section.set_classifications (<<"sc-home-hero">>)
+
+
+				-- END <MAIN> *********************
 
 				-- Save file
 			create l_file.make_open_write ("carver_example.html")
