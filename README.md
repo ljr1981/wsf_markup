@@ -50,6 +50,10 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
          last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
          last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
 ```
+This generated code can now be examined in a browser (ex: Chrome -> inspect).
+
+![alt text](docs/img/ex_last_section_adding_div_tag.JPG "generated section tag and content in Chrome inspect tool.")
+
 ## Side-by-Side
 Let's examine an HTML markup line and compare it to the Eiffel wsf_markup code which will generate it.
 ```html
@@ -70,7 +74,9 @@ This call will create an `{HTML_SECTION}` object and set its `class=` attribute 
 Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
 
 In the example below, pay special attention to how the calls are made relative to the HTML being generated.
+
 ![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Logo Title Text 1")
+
 The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the `{HTML_ELEMENT_FACTORY}` for more information (see the `div` feature).
 
 ## Basic Pattern
