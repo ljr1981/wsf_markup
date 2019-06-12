@@ -243,4 +243,10 @@ feature -- <aside>
 	aside: HTML_FIGCAPTION do new_aside; Result := last_aside end
 	aside_with_paragraph_text (a_text: STRING_32): HTML_FIGCAPTION do new_aside; Result := last_aside; last_aside.add_subelem (p_with_text (a_text)) end
 
+feature -- <article>
+
+	new_article do create last_article end
+	last_article: HTML_ARTICLE attribute create Result end
+	article: HTML_ARTICLE do new_article; Result := last_article end
+
 end

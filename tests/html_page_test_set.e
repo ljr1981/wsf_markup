@@ -134,7 +134,8 @@ feature -- Carver: Example
 									last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
 					-- END <SECTION> *********************
 
-
+					-- NO NEED TO CONTINUE THIS EXAMPLE because the point has been made!
+					
 				-- END <MAIN> *********************
 
 				-- Save file

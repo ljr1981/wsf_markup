@@ -132,6 +132,12 @@ feature -- Test routines
 
 			new_figcaption
 			assert_strings_equal ("figcaption", "<figcaption></figcaption>", last_figcaption.html_out)
+
+			new_aside
+			assert_strings_equal ("aside", "<aside></aside>", last_aside.html_out)
+
+			new_article
+			assert_strings_equal ("article", "<article></article>", last_article.html_out)
 		end
 
 	html_usage_tests
