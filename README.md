@@ -59,7 +59,7 @@ Here, we have a `<section>` tag with a `class` attribute. This tag is enclosed i
 ```c#
 last_main.add_subelem (section_with_class ("sc-home-hero"))
 ```
-The call to `last_main.add_subelem ( ... )` is what will take our `section` object and add it to the `main`.
+The call to `last_main.add_subelem ( ... )` is what will take our `section` object and add it to the `main`. Note that all `{HTML_ELEMENT}` classes have the `add_subelem` feature, which means all tag classes can have sub-elements unless the feature is undefined or redefined.
 
 To create our `section` object, we make a call to `section_with_class (a_class_name: STRING_32)`.
 
