@@ -135,7 +135,7 @@ feature -- Carver: Example
 					-- END <SECTION> *********************
 
 					-- NO NEED TO CONTINUE THIS EXAMPLE because the point has been made!
-					
+
 				-- END <MAIN> *********************
 
 				-- Save file

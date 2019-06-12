@@ -136,7 +136,7 @@ feature -- <style>
 feature -- <h1>
 
 	new_h1 do create last_h1 end
-	last_h1 alias "@@h1": HTML_H1 attribute create Result end
+	last_h1: HTML_H1 attribute create Result end
 	h1: HTML_H1 do new_h1; Result := last_h1 end
 	h1_with_text (a_text: STRING_32): HTML_H1 do new_h1; Result := last_h1; last_h1.set_text (a_text) end
 
@@ -239,9 +239,9 @@ feature -- <figcaption>
 feature -- <aside>
 
 	new_aside do create last_aside end
-	last_aside: HTML_FIGCAPTION attribute create Result end
-	aside: HTML_FIGCAPTION do new_aside; Result := last_aside end
-	aside_with_paragraph_text (a_text: STRING_32): HTML_FIGCAPTION do new_aside; Result := last_aside; last_aside.add_subelem (p_with_text (a_text)) end
+	last_aside: HTML_ASIDE attribute create Result end
+	aside: HTML_ASIDE do new_aside; Result := last_aside end
+	aside_with_paragraph_text (a_text: STRING_32): HTML_ASIDE do new_aside; Result := last_aside; last_aside.add_subelem (p_with_text (a_text)) end
 
 feature -- <article>
 
