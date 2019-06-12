@@ -66,6 +66,17 @@ feature -- Carver: Example
 			new_html_with_head_and_body
 				last_head.add_subelem (meta)
 					last_meta.set_temp_attribute ("charset", "utf-8")
+				last_head.add_subelem (meta)
+					last_meta.set_temp_attribute ("http_equiv", "x-ua-compatible")
+					last_meta.set_temp_attribute ("content", "ie=edge")
+				last_head.add_subelem (title)
+					last_title.set_text ("Stephen Caver &mdash; Designer &amp; Developer")
+				last_head.add_subelem (meta)
+					last_meta.set_temp_attribute ("name", "description")
+					last_meta.set_temp_attribute ("content", "")
+				last_head.add_subelem (meta)
+					last_meta.set_temp_attribute ("name", "viewport")
+					last_meta.set_temp_attribute ("content", "width=device-width, initial-scale=1")
 				-- Save file
 			create l_file.make_open_write ("carver_example.html")
 			l_file.put_string (last_html.html_out)
