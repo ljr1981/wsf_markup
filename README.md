@@ -105,3 +105,16 @@ feature -- Constants
 end
 ```
 The two EIS link give you quick access to Internet resources describing the tag class you are looking at (`<section>` in this case). There is a link to the w3.org specifications (if applicable) and to the w3schools.com link, which has general training documentation and other material. Again—there are lots of EIS links at both the class and feature levels. This is also true of HTML tag attribute classes.
+
+## Uncoded HTML Tags
+This library is **UNDER CONSTRUCTION!**. As such, you will find plenty of HTML element <tags> which have not been created yet. A temporary fix is included in the HTML factory. Take a look at this code (below):
+
+```C#
+temp_element ("tag_name", <<>>) -- Element without attributes
+temp_element ("tag_name", <<create {HTML_STRING_ATTRIBUTE}.make_with_value ("attr-name", "string_value")>>)
+```
+The first call to `temp_element` creates a new element, which will be generated as `<tag_name>`.
+
+The second call, will generate the same tag with an attribute: `<tag_name attr-name="string_value">`.
+
+This is just a temporary fix to yet-to-be-coded HTML element tags. Once needed, these tags are easily coded with their attributes and added to the library (including the factory and testing).
