@@ -1,8 +1,8 @@
 note
 	title: "Representation of an HTML_ELEMENT Factory"
 	purpose: "[
-		This factory class facilitates features in an effort to
-		speed or ease the create of elements and sub-elements.
+		This factory class facilitates features as an effort to
+		speed or ease the creation of HTML elements and sub-elements.
 		]"
 	EIS: "name=html_stats", "src=https://css-tricks.com/average-web-page-data-analyzing-8-million-websites/"
 	EIS: "name=detailed_html_stats", "src=https://www.advancedwebranking.com/html/"
