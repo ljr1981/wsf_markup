@@ -4,7 +4,7 @@
 This library is **UNDER CONSTRUCTION!** Please use with caution. I am actively making changes and updates and cannot make guarentees about stability of code if you use this library.
 
 ## Eiffel Only
-This library is written in pure Eiffel code and Eiffel only. There are no other technologies required for this "stack". The library is designed to be consumed together with the Eiffel Web Framework.
+This library is written in pure [Eiffel](https://www.eiffel.org/downloads/channel/stable) code and [Eiffel](https://www.eiffel.org) only. There are no other technologies required for this "stack". The library is designed to be consumed together with the [Eiffel Web Framework](https://github.com/EiffelWebFramework/EWF).
 ## Purpose
 The purpose of this library is to write Eiffel code that faithfully generates well-formed HTML-5 (and other) markup code. Perhaps the fastest way to communicate is to demonstrate.
 ## Quick Demo
@@ -53,7 +53,7 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
          last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
          last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
 ```
-This generated code can now be examined in a browser (ex: Chrome -> inspect).
+This [generated code](https://github.com/ljr1981/wsf_markup/blob/master/carver_example.html) can now be examined in a browser (ex: Chrome -> inspect).
 
 ![alt text](docs/img/ex_in_chrome_inspect.JPG "generated section tag and content in Chrome inspect tool.")
 
@@ -73,14 +73,15 @@ To create our `section` object, we make a call to `section_with_class (a_class_n
 This call will create an `{HTML_SECTION}` object and set its `class=` attribute to the value of `a_class_name`. The resulting object will later generate the needed HTML markup when its `html_out` feature is called.
 
 **NOTE: Generating an entire segment of HTML—including nested HTML—is performed by a call to `html_out` on any {HTML_ELEMENT}.**
-## What Makes Time Travel Possible!
+
+## It's What Makes Time Travel Possible! (HTML_ELEMENT_FACTORY)
 Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
 
 In the example below, pay special attention to how the calls are made relative to the HTML being generated.
 
-![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Logo Title Text 1")
+![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Factory example")
 
-The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the `{HTML_ELEMENT_FACTORY}` for more information (see the `div` feature).
+The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the [{HTML_ELEMENT_FACTORY}](https://github.com/ljr1981/wsf_markup/blob/master/html/helpers/html_element_factory.e) for more information (see the `div` feature).
 
 ## Basic Pattern
 All of the HTML tag elements in the library are represented in the `{HTML_ELEMENT_FACTORY}` class. There are essentially three staple features:
