@@ -138,6 +138,33 @@ feature -- Test routines
 
 			new_article
 			assert_strings_equal ("article", "<article></article>", last_article.html_out)
+
+			new_b
+			assert_strings_equal ("b", "<b></b>", last_b.html_out)
+
+			new_del
+			assert_strings_equal ("del", "<del></del>", last_del.html_out)
+
+			new_em
+			assert_strings_equal ("em", "<em></em>", last_em.html_out)
+
+			new_i
+			assert_strings_equal ("i", "<i></i>", last_i.html_out)
+
+			new_ins
+			assert_strings_equal ("ins", "<ins></ins>", last_ins.html_out)
+
+			new_mark
+			assert_strings_equal ("mark", "<mark></mark>", last_mark.html_out)
+
+			new_small
+			assert_strings_equal ("small", "<small></small>", last_small.html_out)
+
+			new_sub
+			assert_strings_equal ("sub", "<sub></sub>", last_sub.html_out)
+
+			new_sup
+			assert_strings_equal ("sup", "<sup></sup>", last_sup.html_out)
 		end
 
 	html_usage_tests
