@@ -10,7 +10,7 @@ inherit
 
 feature -- Constants
 
-	tag_name: STRING = "n"
+	tag_name: STRING = "b"
 			-- <Precursor>
 
 end
