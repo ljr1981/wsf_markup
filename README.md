@@ -79,9 +79,9 @@ Calls like `last_main` and `section_with_class` are made possible when inheritin
 
 In the example below, pay special attention to how the calls are made relative to the HTML being generated.
 
-![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Logo Title Text 1")
+![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Factory example")
 
-The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the `{HTML_ELEMENT_FACTORY}` for more information (see the `div` feature).
+The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the [{HTML_ELEMENT_FACTORY}](https://github.com/ljr1981/wsf_markup/blob/master/html/helpers/html_element_factory.e) for more information (see the `div` feature).
 
 ## Basic Pattern
 All of the HTML tag elements in the library are represented in the `{HTML_ELEMENT_FACTORY}` class. There are essentially three staple features:
