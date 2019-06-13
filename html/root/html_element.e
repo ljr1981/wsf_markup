@@ -41,7 +41,7 @@ feature -- Text
 
 feature -- HTML-embedded Text
 
-	text_embedded: ARRAYED_LIST [TUPLE [text: STRING_32; elem: detachable HTML_ELEMENT]]
+	text_embedded: ARRAYED_LIST [TUPLE [t_text: STRING_32; t_elem: detachable HTML_TEXT_FORMATTING_ELEMENT]]
 			--
 		attribute
 			create Result.make (10)
@@ -313,8 +313,21 @@ feature -- Output
 		do
 			create Result.make_empty
 			Result.append_string_general (start_tag_out)
-			if attached text as al_text then
+			if attached text as al_text and then text_embedded.is_empty then
 				Result.append_string_general (al_text)
+			elseif not attached text and not text_embedded.is_empty then
+				across
+					text_embedded as ic_text
+				loop
+					if attached ic_text.item.t_elem as al_tag then
+						al_tag.set_text (ic_text.item.t_text)
+						Result.append_string_general (al_tag.html_out)
+					else
+						Result.append_string_general (ic_text.item.t_text)
+					end
+				end
+			else
+				-- no text or text with in-line tags
 			end
 			across
 				sub_elements as ic
