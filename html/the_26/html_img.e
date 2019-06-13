@@ -122,7 +122,7 @@ feature -- Attributes: ismap
 			-- ismap = "ismap" or "" (empty string) or empty #
 			--	Specifies that its img element provides access to a server-side image map.
 		require
-			ismap_or_empty: (a_value.same_string ("ismap")) xor (a_value.is_empty)
+			ismap_or_empty: a_value.same_string ("ismap") xor a_value.is_empty
 		do
 			create ismap.make_with_value ("ismap", a_value)
 			check attached ismap as al_attribute then attributes.force (al_attribute) end

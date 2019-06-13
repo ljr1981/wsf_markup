@@ -66,7 +66,7 @@ feature -- Attributes: scoped
 			--	the style element’s parent element, and that element’s child nodes. Otherwise,
 			--	the specified styles are meant to apply to the entire document.
 		require
-			scoped_or_empty: (a_value.same_string ("scoped")) xor (a_value.is_empty)
+			scoped_or_empty: a_value.same_string ("scoped") xor a_value.is_empty
 		do
 			create scoped.make_with_value ("scoped", a_value)
 			check attached scoped as al_attribute then attributes.force (al_attribute) end
