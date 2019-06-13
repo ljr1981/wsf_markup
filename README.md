@@ -73,7 +73,8 @@ To create our `section` object, we make a call to `section_with_class (a_class_n
 This call will create an `{HTML_SECTION}` object and set its `class=` attribute to the value of `a_class_name`. The resulting object will later generate the needed HTML markup when its `html_out` feature is called.
 
 **NOTE: Generating an entire segment of HTML—including nested HTML—is performed by a call to `html_out` on any {HTML_ELEMENT}.**
-## What Makes Time Travel Possible!
+
+## It's What Makes Time Travel Possible! (HTML_ELEMENT_FACTORY)
 Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
 
 In the example below, pay special attention to how the calls are made relative to the HTML being generated.
