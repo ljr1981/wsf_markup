@@ -1,5 +1,8 @@
 # wsf_markup - An Eiffel-based HTML Generation Library
 
+## STATUS
+This library is **UNDER CONSTRUCTION!** Please use with caution. I am actively making changes and updates and cannot make guarentees about stability of code if you use this library.
+
 ## Eiffel Only
 This library is written in pure Eiffel code and Eiffel only. There are no other technologies required for this "stack". The library is designed to be consumed together with the Eiffel Web Framework.
 ## Purpose
@@ -50,6 +53,10 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
          last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
          last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
 ```
+This generated code can now be examined in a browser (ex: Chrome -> inspect).
+
+![alt text](docs/img/ex_in_chrome_inspect.JPG "generated section tag and content in Chrome inspect tool.")
+
 ## Side-by-Side
 Let's examine an HTML markup line and compare it to the Eiffel wsf_markup code which will generate it.
 ```html
@@ -70,7 +77,9 @@ This call will create an `{HTML_SECTION}` object and set its `class=` attribute 
 Calls like `last_main` and `section_with_class` are made possible when inheriting from `{HTML_ELEMENT_FACTORY}`. For example: Every {HTML_ELEMENT} inherits from {HTML_ELEMENT_FACTORY}, which allows each HTML element tag object to create other HTML elements using the facilities of the factory.
 
 In the example below, pay special attention to how the calls are made relative to the HTML being generated.
+
 ![alt text](docs/img/ex_last_section_adding_div_tag.JPG "Logo Title Text 1")
+
 The call to `div_with_class` creates a new `{HTML_DIV}` object, creates and sets an `{HTML_STRING_ATTRIBUTE]` object as the `class` attribute on the `div`tag. It then takes the `div` object and attaches it (assigns it) to the `last-div` attribute. All of this is happening in the factory. See the `{HTML_ELEMENT_FACTORY}` for more information (see the `div` feature).
 
 ## Basic Pattern
@@ -118,3 +127,21 @@ The first call to `temp_element` creates a new element, which will be generated 
 The second call, will generate the same tag with an attribute: `<tag_name attr-name="string_value">`.
 
 This is just a temporary fix to yet-to-be-coded HTML element tags. Once needed, these tags are easily coded with their attributes and added to the library (including the factory and testing).
+
+**NOTE:** If you need to use the `temp_element` call and subsequently need to access this element, you have two basic approaches.
+
+1. Use the `last_temp` feature.
+2. Create a local (e.g. `local l_temp_element`) as a reference to the created object.
+
+You can use option #1 (above) if you need to work with the temp element tag one at a time. The moment you require two temp tags, you will need to create at least one local.
+
+## A Note about Style
+While each `{HTML_ELEMENT}` inherits from `{HTML_ELEMENT_FACTORY}` you may want to refrain from making dot-calls to access factory calls on factory calls. For example:
+
+```C#
+last_div.last_div.add_subelem (last_div) -- THIS CODE IS DANGEROUS and a CIRCULAR reference.
+```
+
+The code (above) inserts a `Current` `last_div` object reference into one of its factory-generated `last_div` objects `sub_elements` array. I cannot vouch for what will happen. It seems the worst will be some kind of repeating call that will exhaust the call-stack. Just be aware that as it stands, you can make code structures like this that will get you into trouble.
+
+The safest way (I have found) so far is to just use the factory of the root class you are in and never use a factory call on a factory object.
