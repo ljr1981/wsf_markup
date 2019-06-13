@@ -6,7 +6,7 @@ class
 	HTML_STRONG
 
 inherit
-	HTML_ELEMENT
+	HTML_TEXT_FORMATTING_ELEMENT
 
 feature -- Constants
 

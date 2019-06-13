@@ -258,4 +258,58 @@ feature -- <article>
 	last_article: HTML_ARTICLE attribute create Result end
 	article: HTML_ARTICLE do new_article; Result := last_article end
 
+feature -- <b>
+
+	new_b do create last_b end
+	last_b: HTML_B attribute create Result end
+	b: HTML_B do new_b; Result := last_b end
+
+feature -- <del>
+
+	new_del do create last_del end
+	last_del: HTML_DEL attribute create Result end
+	del: HTML_DEL do new_del; Result := last_del end
+
+feature -- <em>
+
+	new_em do create last_em end
+	last_em: HTML_EM attribute create Result end
+	em: HTML_EM do new_em; Result := last_em end
+
+feature -- <i>
+
+	new_i do create last_i end
+	last_i: HTML_I attribute create Result end
+	i: HTML_I do new_i; Result := last_i end
+
+feature -- <ins>
+
+	new_ins do create last_ins end
+	last_ins: HTML_INS attribute create Result end
+	ins: HTML_INS do new_ins; Result := last_ins end
+
+feature -- <mark>
+
+	new_mark do create last_mark end
+	last_mark: HTML_MARK attribute create Result end
+	mark: HTML_MARK do new_mark; Result := last_mark end
+
+feature -- <small>
+
+	new_small do create last_small end
+	last_small: HTML_SMALL attribute create Result end
+	small: HTML_SMALL do new_small; Result := last_small end
+
+feature -- <sub>
+
+	new_sub do create last_sub end
+	last_sub: HTML_SUB attribute create Result end
+	sub: HTML_SUB do new_sub; Result := last_sub end
+
+feature -- <sup>
+
+	new_sup do create last_sup end
+	last_sup: HTML_SUP attribute create Result end
+	sup: HTML_SUP do new_sup; Result := last_sup end
+
 end

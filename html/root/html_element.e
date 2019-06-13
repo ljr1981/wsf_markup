@@ -39,6 +39,14 @@ feature -- Text
 			text := a_text
 		end
 
+feature -- HTML-embedded Text
+
+	text_embedded: ARRAYED_LIST [TUPLE [text: STRING_32; elem: detachable HTML_ELEMENT]]
+			--
+		attribute
+			create Result.make (10)
+		end
+
 feature -- Sub-Elements
 
 	sub_elements: ARRAYED_LIST [HTML_ELEMENT]
