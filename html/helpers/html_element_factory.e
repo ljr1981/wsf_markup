@@ -7,6 +7,15 @@ note
 	EIS: "name=html_stats", "src=https://css-tricks.com/average-web-page-data-analyzing-8-million-websites/"
 	EIS: "name=detailed_html_stats", "src=https://www.advancedwebranking.com/html/"
 
+	style: "[
+		The code below breaks common style convention by placing
+		multiple lines of code on a single line using the semicolon (";").
+		This is done to facilitate using existing tag element code
+		to copy-paste-modify-to-taste new elements as they are added
+		to this class. Some day, I will circle back and make all
+		of these multi-line instead of single-line.
+		]"
+
 class
 	HTML_ELEMENT_FACTORY
 
