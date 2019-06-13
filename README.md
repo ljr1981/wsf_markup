@@ -7,6 +7,12 @@ This library is **UNDER CONSTRUCTION!** Please use with caution. I am actively m
 This library is written in pure [Eiffel](https://www.eiffel.org/downloads/channel/stable) code and [Eiffel](https://www.eiffel.org) only. There are no other technologies required for this "stack". The library is designed to be consumed together with the [Eiffel Web Framework](https://github.com/EiffelWebFramework/EWF).
 ## Purpose
 The purpose of this library is to write Eiffel code that faithfully generates well-formed HTML-5 (and other) markup code. Perhaps the fastest way to communicate is to demonstrate.
+## Vision
+Note that the goal of this library is not to replace HTML with Eiffel, nor to make Eiffel code be better than HTML in terms of readability! The goal is to provide excellent generation of well-formed HTML in Eiffel, where the Eiffel code can then serve the creation of higher levels of abstraction. 
+
+For example: One might conceive of a single Eiffel class capable of generating entire sections of responsive HTML together with needed CSS and Javascript. 
+
+There is also a goal of using this library as the foundation to wrap libraries like Bootstrap and others. Ultimately, the goal is to have single Eiffel classes which can generate complex systems with just a few class creations and then making a few feature calls and settings.
 ## Quick Demo
 Let us say we have a code snippet of HTML that we want to generate using Eiffel by way of the wsf_markup library.
 ```html
