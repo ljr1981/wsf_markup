@@ -47,6 +47,16 @@ feature -- HTML-embedded Text
 			create Result.make (10)
 		end
 
+	set_text_embeds (a_list: ARRAY [TUPLE [t_text: STRING_32; t_elem: detachable HTML_TEXT_FORMATTING_ELEMENT]])
+			--
+		do
+			across
+				a_list as ic
+			loop
+				text_embedded.force (ic.item)
+			end
+		end
+
 feature -- Sub-Elements
 
 	sub_elements: ARRAYED_LIST [HTML_ELEMENT]
