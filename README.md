@@ -53,7 +53,7 @@ last_main.add_subelem (section_with_class ("sc-home-hero"))
          last_div.add_subelem (img_with_src_alt ("/img/hero-photo.png", "Photo of Stephen"))
          last_div.add_subelem (figcaption_with_text ("Head-cover enthusiast"))
 ```
-This generated code can now be examined in a browser (ex: Chrome -> inspect).
+This [generated code](https://github.com/ljr1981/wsf_markup/blob/master/carver_example.html) can now be examined in a browser (ex: Chrome -> inspect).
 
 ![alt text](docs/img/ex_in_chrome_inspect.JPG "generated section tag and content in Chrome inspect tool.")
 
