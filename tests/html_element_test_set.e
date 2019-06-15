@@ -211,15 +211,6 @@ feature -- Test routines
 	text_with_inline_tag_embeds_test
 			--
 		do
---			new_div
---			last_div.set_text_embeds (<<
---										raw_text ("start_text "),
---										em_text ("emphasized"),
---										raw_text (" middle text "),
---										strong_text ("strong"),
---										raw_text (" end text.")
---										>>)
---			assert_strings_equal ("embed_test_1", "<div>start_text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
 			new_div
 			last_div.set_text (raw_text ("start text ") +
 								em_text ("emphasized") +
