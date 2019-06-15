@@ -351,25 +351,29 @@ feature -- Output
 			-- <Precursor>
 		do
 			create Result.make_empty
-			Result.append_character (Left_enclosing_character)
-			Result.append_string_general (tag_name)
-			across
-				attributes as ic
-			loop
-				Result.append_character (' ')
-				Result.append_string_general (ic.item.attribute_out)
+			if not tag_name.is_empty then
+				Result.append_character (Left_enclosing_character)
+				Result.append_string_general (tag_name)
+				across
+					attributes as ic
+				loop
+					Result.append_character (' ')
+					Result.append_string_general (ic.item.attribute_out)
+				end
+				Result.append_character (Right_enclosing_character)
 			end
-			Result.append_character (Right_enclosing_character)
 		end
 
 	end_tag_out: STRING_32
 			-- <Precursor>
 		do
 			create Result.make_empty
-			Result.append_character (Left_enclosing_character)
-			Result.append_character ('/')
-			Result.append_string_general (tag_name)
-			Result.append_character (Right_enclosing_character)
+			if not tag_name.is_empty then
+				Result.append_character (Left_enclosing_character)
+				Result.append_character ('/')
+				Result.append_string_general (tag_name)
+				Result.append_character (Right_enclosing_character)
+			end
 		end
 
 feature -- Constants

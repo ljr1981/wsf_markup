@@ -180,6 +180,7 @@ feature -- <strong>
 	new_strong do create last_strong end
 	last_strong: HTML_STRONG attribute create Result end
 	strong: HTML_STRONG do new_strong; Result := last_strong end
+	strong_text (a_text: STRING_32): HTML_STRONG do new_strong; Result := last_strong; last_strong.set_text (a_text) end
 
 feature -- <table>
 
@@ -263,53 +264,68 @@ feature -- <b>
 	new_b do create last_b end
 	last_b: HTML_B attribute create Result end
 	b: HTML_B do new_b; Result := last_b end
+	bold_text (a_text: STRING_32): HTML_B do new_b; Result := last_b; last_b.set_text (a_text) end
 
 feature -- <del>
 
 	new_del do create last_del end
 	last_del: HTML_DEL attribute create Result end
 	del: HTML_DEL do new_del; Result := last_del end
+	del_text (a_text: STRING_32): HTML_DEL do new_del; Result := last_del; last_del.set_text (a_text) end
 
 feature -- <em>
 
 	new_em do create last_em end
 	last_em: HTML_EM attribute create Result end
 	em: HTML_EM do new_em; Result := last_em end
+	em_text (a_text: STRING_32): HTML_EM do new_em; Result := last_em; last_em.set_text (a_text) end
 
 feature -- <i>
 
 	new_i do create last_i end
 	last_i: HTML_I attribute create Result end
 	i: HTML_I do new_i; Result := last_i end
+	italic_text (a_text: STRING_32): HTML_I do new_i; Result := last_i; last_i.set_text (a_text) end
 
 feature -- <ins>
 
 	new_ins do create last_ins end
 	last_ins: HTML_INS attribute create Result end
 	ins: HTML_INS do new_ins; Result := last_ins end
+	ins_text (a_text: STRING_32): HTML_INS do new_ins; Result := last_ins; last_ins.set_text (a_text) end
 
 feature -- <mark>
 
 	new_mark do create last_mark end
 	last_mark: HTML_MARK attribute create Result end
 	mark: HTML_MARK do new_mark; Result := last_mark end
+	mark_text (a_text: STRING_32): HTML_MARK do new_mark; Result := last_mark; last_mark.set_text (a_text) end
 
 feature -- <small>
 
 	new_small do create last_small end
 	last_small: HTML_SMALL attribute create Result end
 	small: HTML_SMALL do new_small; Result := last_small end
+	small_text (a_text: STRING_32): HTML_SMALL do new_small; Result := last_small; last_small.set_text (a_text) end
 
 feature -- <sub>
 
 	new_sub do create last_sub end
 	last_sub: HTML_SUB attribute create Result end
 	sub: HTML_SUB do new_sub; Result := last_sub end
+	subscript_text (a_text: STRING_32): HTML_SUB do new_sub; Result := last_sub; last_sub.set_text (a_text) end
 
 feature -- <sup>
 
 	new_sup do create last_sup end
 	last_sup: HTML_SUP attribute create Result end
 	sup: HTML_SUP do new_sup; Result := last_sup end
+	superscript_text (a_text: STRING_32): HTML_SUP do new_sup; Result := last_sup; last_sup.set_text (a_text) end
+
+feature -- Raw Text
+
+	new_raw_text do create last_raw_text end
+	last_raw_text: HTML_RAW_TEXT attribute create Result end
+	raw_text (a_text: STRING_32): HTML_RAW_TEXT do new_raw_text; Result := last_raw_text; last_raw_text.set_text (a_text) end
 
 end

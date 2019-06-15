@@ -165,6 +165,9 @@ feature -- Test routines
 
 			new_sup
 			assert_strings_equal ("sup", "<sup></sup>", last_sup.html_out)
+
+			new_raw_text
+			assert_strings_equal ("raw_text", "", last_raw_text.html_out)
 		end
 
 	html_usage_tests
@@ -214,6 +217,8 @@ feature -- Test routines
 										[{STRING_32} " end text.", Void]
 										>>)
 			assert_strings_equal ("embed_test_1", "<div>start text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
+
+
 		end
 
 end
