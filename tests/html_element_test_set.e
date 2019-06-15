@@ -168,6 +168,8 @@ feature -- Test routines
 
 			new_raw_text
 			assert_strings_equal ("raw_text", "", last_raw_text.html_out)
+			last_raw_text.set_text ("hello_world")
+			assert_strings_equal ("raw_text_hello_world", "hello_world", last_raw_text.html_out)
 		end
 
 	html_usage_tests
@@ -208,16 +210,23 @@ feature -- Test routines
 	text_with_inline_tag_embeds_test
 			--
 		do
+--			new_div
+--			last_div.set_text_embeds (<<
+--										raw_text ("start_text "),
+--										em_text ("emphasized"),
+--										raw_text (" middle text "),
+--										strong_text ("strong"),
+--										raw_text (" end text.")
+--										>>)
+--			assert_strings_equal ("embed_test_1", "<div>start_text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
 			new_div
-			last_div.set_text_embeds (<<
-										[{STRING_32} "start text ", Void],
-										[{STRING_32} "emphasized", em],
-										[{STRING_32} " middle text ", Void],
-										[{STRING_32} "strong", strong],
-										[{STRING_32} " end text.", Void]
-										>>)
-			assert_strings_equal ("embed_test_1", "<div>start text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
-
+			last_div.set_text (raw_text ("start text ") +
+								em_text ("emphasized") +
+								raw_text (" middle text ") +
+								strong_text ("strong") +
+								raw_text (" end text.")
+								)
+			assert_strings_equal ("embed_test_2", "<div>start text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
 
 		end
 
