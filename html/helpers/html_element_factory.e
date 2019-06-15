@@ -15,6 +15,7 @@ note
 		to this class. Some day, I will circle back and make all
 		of these multi-line instead of single-line.
 		]"
+	ca_ignore: "CA033", "CA033: Very big class"
 
 class
 	HTML_ELEMENT_FACTORY

@@ -331,8 +331,6 @@ feature -- Output
 				loop
 					Result.append_string_general (ic_text.item.html_out)
 				end
-			else
-				-- no text or text with in-line tags
 			end
 			across
 				sub_elements as ic

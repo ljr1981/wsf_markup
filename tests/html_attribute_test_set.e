@@ -6,6 +6,7 @@ note
 	date: "$Date$"
 	revision: "$Revision$"
 	testing: "type/manual"
+	ca_ignore: "CA093"
 
 class
 	HTML_ATTRIBUTE_TEST_SET

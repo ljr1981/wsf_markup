@@ -6,6 +6,7 @@ note
 	date: "$Date$"
 	revision: "$Revision$"
 	testing: "type/manual"
+	ca_ignore: "CA032", "CA032: very long routine"
 
 class
 	HTML_ELEMENT_TEST_SET
