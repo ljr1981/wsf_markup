@@ -211,6 +211,7 @@ feature -- Test routines
 	text_with_inline_tag_embeds_test
 			--
 		do
+				-- method 1 short
 			new_div
 			last_div.set_text (raw_text ("start text ") +
 								em_text ("emphasized") +
@@ -218,8 +219,26 @@ feature -- Test routines
 								strong_text ("strong") +
 								raw_text (" end text.")
 								)
-			assert_strings_equal ("embed_test_2", "<div>start text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
+			assert_strings_equal ("embed_test_1", "<div>start text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
 
+				-- method 2 long
+			new_div
+			new_raw_text
+			last_div.add_subelem (last_raw_text)
+				last_raw_text.set_text ("start text ")
+			new_em
+			last_div.add_subelem (last_em)
+				last_em.set_text ("emphasized")
+			new_raw_text
+			last_div.add_subelem (last_raw_text)
+				last_raw_text.set_text (" middle text ")
+			new_strong
+			last_div.add_subelem (last_strong)
+				last_strong.set_text ("strong")
+			new_raw_text
+			last_div.add_subelem (last_raw_text)
+				last_raw_text.set_text (" end text.")
+			assert_strings_equal ("embed_test_2", "<div>start text <em>emphasized</em> middle text <strong>strong</strong> end text.</div>", last_div.html_out)
 		end
 
 end
