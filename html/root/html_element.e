@@ -332,12 +332,58 @@ feature -- Output
 					Result.append_string_general (ic_text.item.html_out)
 				end
 			end
-			across
-				sub_elements as ic
-			loop
-				Result.append_string_general (ic.item.html_out)
+			if sub_elements.is_empty and not attached text and text_embedded.is_empty and not end_tag_out.is_empty then
+				Result.insert_character ('/', Result.count)
+			else
+				across
+					sub_elements as ic
+				loop
+					Result.append_string_general (ic.item.html_out)
+				end
+				Result.append_string_general (end_tag_out)
 			end
-			Result.append_string_general (end_tag_out)
+		end
+
+	prettified_html (a_level: INTEGER): STRING_32
+			-- Prettified HTML in the sense of tabbed indenting.
+		note
+			example: "[
+				<html><body>...</body></html>
+				
+				The above is "prettified" to:
+				
+				<html>
+					<body>
+						...
+					</body>
+				</html>
+				]"
+		do
+			create Result.make_filled ('%T', a_level)
+			Result.prepend_character ('%N')
+
+			Result.append_string_general (start_tag_out)
+			if attached text as al_text and then text_embedded.is_empty then
+				Result.append_string_general (al_text)
+			elseif not attached text and not text_embedded.is_empty then
+				across
+					text_embedded as ic_text
+				loop
+					Result.append_string_general (ic_text.item.html_out)
+				end
+			end
+			if sub_elements.is_empty and not attached text and text_embedded.is_empty then
+				Result.insert_character ('/', Result.count)
+			else
+				across
+					sub_elements as ic
+				loop
+					Result.append_string_general (ic.item.prettified_html (a_level + 1))
+				end
+				Result.append_character ('%N')
+				Result.append_string_general (create {STRING}.make_filled ('%T', a_level))
+				Result.append_string_general (end_tag_out)
+			end
 		end
 
 	start_tag_out: STRING_32

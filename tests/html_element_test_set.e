@@ -38,134 +38,134 @@ feature -- Test routines
 			-- New test routine
 		do
 			new_html_with_head_and_body
-			assert_strings_equal ("html_head_body", "<html><head></head><body></body></html>", last_html.html_out)
+			assert_strings_equal ("html_head_body", "<html><head/><body/></html>", last_html.html_out)
 
 			new_title
-			assert_strings_equal ("title", "<title></title>", last_title.html_out)
+			assert_strings_equal ("title", "<title/>", last_title.html_out)
 
 			new_meta
-			assert_strings_equal ("meta", "<meta></meta>", last_meta.html_out)
+			assert_strings_equal ("meta", "<meta/>", last_meta.html_out)
 
 			new_div
-			assert_strings_equal ("div", "<div></div>", last_div.html_out)
+			assert_strings_equal ("div", "<div/>", last_div.html_out)
 
 			new_a
-			assert_strings_equal ("a", "<a></a>", last_a.html_out)
+			assert_strings_equal ("a", "<a/>", last_a.html_out)
 
 			new_hyperlink -- Equiv of <a>
-			assert_strings_equal ("a", "<a></a>", last_hyperlink.html_out)
+			assert_strings_equal ("a", "<a/>", last_hyperlink.html_out)
 
 			new_script
-			assert_strings_equal ("script", "<script></script>", last_script.html_out)
+			assert_strings_equal ("script", "<script/>", last_script.html_out)
 
 			new_link
-			assert_strings_equal ("link", "<link></link>", last_link.html_out)
+			assert_strings_equal ("link", "<link/>", last_link.html_out)
 
 			new_img
-			assert_strings_equal ("img", "<img></img>", last_img.html_out)
+			assert_strings_equal ("img", "<img/>", last_img.html_out)
 
 			new_p
-			assert_strings_equal ("p", "<p></p>", last_p.html_out)
+			assert_strings_equal ("p", "<p/>", last_p.html_out)
 
 			new_span
-			assert_strings_equal ("span", "<span></span>", last_span.html_out)
+			assert_strings_equal ("span", "<span/>", last_span.html_out)
 
 			new_li
-			assert_strings_equal ("li", "<li></li>", last_li.html_out)
+			assert_strings_equal ("li", "<li/>", last_li.html_out)
 
 			new_ul
-			assert_strings_equal ("ul", "<ul></ul>", last_ul.html_out)
+			assert_strings_equal ("ul", "<ul/>", last_ul.html_out)
 
 			new_br
-			assert_strings_equal ("br", "<br></br>", last_br.html_out)
+			assert_strings_equal ("br", "<br/>", last_br.html_out)
 
 			new_style
-			assert_strings_equal ("style", "<style></style>", last_style.html_out)
+			assert_strings_equal ("style", "<style/>", last_style.html_out)
 
 			new_h1
-			assert_strings_equal ("h1", "<h1></h1>", last_h1.html_out)
+			assert_strings_equal ("h1", "<h1/>", last_h1.html_out)
 
 			new_h2
-			assert_strings_equal ("h2", "<h2></h2>", last_h2.html_out)
+			assert_strings_equal ("h2", "<h2/>", last_h2.html_out)
 
 			new_input
-			assert_strings_equal ("input", "<input></input>", last_input.html_out)
+			assert_strings_equal ("input", "<input/>", last_input.html_out)
 
 			new_form
-			assert_strings_equal ("form", "<form></form>", last_form.html_out)
+			assert_strings_equal ("form", "<form/>", last_form.html_out)
 
 			new_h3
-			assert_strings_equal ("h3", "<h3></h3>", last_h3.html_out)
+			assert_strings_equal ("h3", "<h3/>", last_h3.html_out)
 
 			new_strong
-			assert_strings_equal ("strong", "<strong></strong>", last_strong.html_out)
+			assert_strings_equal ("strong", "<strong/>", last_strong.html_out)
 
 			new_table
-			assert_strings_equal ("table", "<table></table>", last_table.html_out)
+			assert_strings_equal ("table", "<table/>", last_table.html_out)
 
 			new_tbody
-			assert_strings_equal ("tbody", "<tbody></tbody>", last_tbody.html_out)
+			assert_strings_equal ("tbody", "<tbody/>", last_tbody.html_out)
 
 			new_tr
-			assert_strings_equal ("tr", "<tr></tr>", last_tr.html_out)
+			assert_strings_equal ("tr", "<tr/>", last_tr.html_out)
 
 			new_td
-			assert_strings_equal ("td", "<td></td>", last_td.html_out)
+			assert_strings_equal ("td", "<td/>", last_td.html_out)
 				-- The next are equivs of each other
 			new_td_with_colspan (2)
-			assert_strings_equal ("new_td_with_colspan", "<td colspan=2></td>", last_td.html_out)
+			assert_strings_equal ("new_td_with_colspan", "<td colspan=2/>", last_td.html_out)
 			td_with_colspan (2)
-			assert_strings_equal ("td_with_colspan", "<td colspan=2></td>", last_td.html_out)
+			assert_strings_equal ("td_with_colspan", "<td colspan=2/>", last_td.html_out)
 			td.set_colspan (2)
-			assert_strings_equal ("td_set_colspan", "<td colspan=2></td>", last_td.html_out)
+			assert_strings_equal ("td_set_colspan", "<td colspan=2/>", last_td.html_out)
 
 			new_main
-			assert_strings_equal ("main", "<main></main>", last_main.html_out)
+			assert_strings_equal ("main", "<main/>", last_main.html_out)
 
 			new_section
-			assert_strings_equal ("section", "<section></section>", last_section.html_out)
+			assert_strings_equal ("section", "<section/>", last_section.html_out)
 
 			new_header
-			assert_strings_equal ("header", "<header></header>", last_header.html_out)
+			assert_strings_equal ("header", "<header/>", last_header.html_out)
 
 			new_figure
-			assert_strings_equal ("figure", "<figure></figure>", last_figure.html_out)
+			assert_strings_equal ("figure", "<figure/>", last_figure.html_out)
 
 			new_figcaption
-			assert_strings_equal ("figcaption", "<figcaption></figcaption>", last_figcaption.html_out)
+			assert_strings_equal ("figcaption", "<figcaption/>", last_figcaption.html_out)
 
 			new_aside
-			assert_strings_equal ("aside", "<aside></aside>", last_aside.html_out)
+			assert_strings_equal ("aside", "<aside/>", last_aside.html_out)
 
 			new_article
-			assert_strings_equal ("article", "<article></article>", last_article.html_out)
+			assert_strings_equal ("article", "<article/>", last_article.html_out)
 
 			new_b
-			assert_strings_equal ("b", "<b></b>", last_b.html_out)
+			assert_strings_equal ("b", "<b/>", last_b.html_out)
 
 			new_del
-			assert_strings_equal ("del", "<del></del>", last_del.html_out)
+			assert_strings_equal ("del", "<del/>", last_del.html_out)
 
 			new_em
-			assert_strings_equal ("em", "<em></em>", last_em.html_out)
+			assert_strings_equal ("em", "<em/>", last_em.html_out)
 
 			new_i
-			assert_strings_equal ("i", "<i></i>", last_i.html_out)
+			assert_strings_equal ("i", "<i/>", last_i.html_out)
 
 			new_ins
-			assert_strings_equal ("ins", "<ins></ins>", last_ins.html_out)
+			assert_strings_equal ("ins", "<ins/>", last_ins.html_out)
 
 			new_mark
-			assert_strings_equal ("mark", "<mark></mark>", last_mark.html_out)
+			assert_strings_equal ("mark", "<mark/>", last_mark.html_out)
 
 			new_small
-			assert_strings_equal ("small", "<small></small>", last_small.html_out)
+			assert_strings_equal ("small", "<small/>", last_small.html_out)
 
 			new_sub
-			assert_strings_equal ("sub", "<sub></sub>", last_sub.html_out)
+			assert_strings_equal ("sub", "<sub/>", last_sub.html_out)
 
 			new_sup
-			assert_strings_equal ("sup", "<sup></sup>", last_sup.html_out)
+			assert_strings_equal ("sup", "<sup/>", last_sup.html_out)
 
 			new_raw_text
 			assert_strings_equal ("raw_text", "", last_raw_text.html_out)
@@ -185,10 +185,23 @@ feature -- Test routines
 			last_body.add_subelem (div)
 			last_div.add_subelem (span)
 			assert_strings_equal ("version_1", equiv_html_versions, last_html.html_out)
+			assert_strings_equal ("prettified", equiv_html_prettified, last_html.prettified_html (0))
 		end
 
 	equiv_html_versions: STRING_32 = "[
-<html><head></head><body><div><span></span></div></body></html>
+<html><head/><body><div><span/></div></body></html>
+]"
+
+	equiv_html_prettified: STRING_32 = "[
+
+<html>
+	<head/>
+	<body>
+		<div>
+			<span/>
+		</div>
+	</body>
+</html>
 ]"
 
 	html_script_tests
@@ -198,13 +211,13 @@ feature -- Test routines
 		do
 			create l_script
 			l_script.set_type ("javascript")
-			assert_strings_equal ("type_is_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+			assert_strings_equal ("type_is_javascript", "<script type=%"javascript%"/>", l_script.html_out)
 
 			create l_script.make_with_type ("javascript")
-			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"/>", l_script.html_out)
 
 			create l_script.make_with_type_javascript
-			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"/>", l_script.html_out)
 
 		end
 

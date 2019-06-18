@@ -140,7 +140,7 @@ feature -- Carver: Example
 
 				-- Save file
 			create l_file.make_open_write ("carver_example.html")
-			l_file.put_string (last_html.html_out)
+			l_file.put_string (last_html.prettified_html (0))
 			l_file.close
 		end
 
