@@ -26,7 +26,7 @@ feature -- Attributes: border
 			not_empty: not a_value.is_empty
 		do
 			create border.make_with_value ("border", a_value)
-			check attached border as al_attribute then attributes.force (al_attribute) end
+			check attached border as al_attribute then attributes.force (al_attribute, "border") end
 		end
 
 end

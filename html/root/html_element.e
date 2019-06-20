@@ -73,7 +73,7 @@ feature -- Sub-Elements
 
 feature -- Attributes
 
-	attributes: ARRAYED_LIST [HTML_ATTRIBUTE [ANY]]
+	attributes: HASH_TABLE [HTML_ATTRIBUTE [ANY], STRING]
 			--
 		note
 			EIS: "name=global_attributes", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#global-attributes"
@@ -86,7 +86,7 @@ feature -- Temp Attributes
 	set_temp_attribute (a_name, a_value: STRING_32)
 			-- Set a temporary string attribute into `attributes'.
 		do
-			attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (a_name, a_value))
+			attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (a_name, a_value), a_name)
 		end
 
 	set_temp_attributes (a_key_values: ARRAY [TUPLE [ti_name, ti_value: STRING]])
@@ -95,7 +95,7 @@ feature -- Temp Attributes
 			across
 				a_key_values as ic
 			loop
-				attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (ic.item.ti_name, ic.item.ti_value))
+				attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (ic.item.ti_name, ic.item.ti_value), ic.item.ti_name)
 			end
 		end
 
@@ -105,7 +105,7 @@ feature -- Temp Attributes
 			across
 				a_key_values as ic
 			loop
-				attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (ic.item.ti_name, ic.item.ti_value))
+				attributes.force (create {HTML_STRING_ATTRIBUTE}.make_with_value (ic.item.ti_name, ic.item.ti_value), ic.item.ti_name)
 			end
 		end
 
@@ -124,7 +124,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create accesskey.make_with_values ("accesskey", a_values)
-			check attached accesskey as al_attribute then attributes.force (al_attribute) end
+			check attached accesskey as al_attribute then attributes.force (al_attribute, "accesskey") end
 		end
 
 	classification: detachable HTML_STRING_ATTRIBUTE
@@ -136,7 +136,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create classification.make_with_values ("class", a_values)
-			check attached classification as al_attribute then attributes.force (al_attribute) end
+			check attached classification as al_attribute then attributes.force (al_attribute, "class") end
 		end
 
 	contenteditable: detachable HTML_BOOLEAN_ATTRIBUTE
@@ -148,7 +148,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create contenteditable.make_with_value ("contenteditable", a_value)
-			check attached contenteditable as al_attribute then attributes.force (al_attribute) end
+			check attached contenteditable as al_attribute then attributes.force (al_attribute, "contenteditable") end
 		end
 
 	contextmenu: detachable HTML_STRING_ATTRIBUTE
@@ -160,7 +160,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create contextmenu.make_with_value ("contextmenu", a_value)
-			check attached contextmenu as al_attribute then attributes.force (al_attribute) end
+			check attached contextmenu as al_attribute then attributes.force (al_attribute, "contextmenu") end
 		end
 
 	dir: detachable HTML_STRING_ATTRIBUTE
@@ -176,7 +176,7 @@ feature -- Global Attributes
 			in_list: (<<"ltr", "rtl", "auto">>).has (a_value.out)
 		do
 			create dir.make_with_value ("dir", a_value)
-			check attached dir as al_attribute then attributes.force (al_attribute) end
+			check attached dir as al_attribute then attributes.force (al_attribute, "dir") end
 		end
 
 	draggable: detachable HTML_BOOLEAN_ATTRIBUTE
@@ -188,7 +188,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create draggable.make_with_value ("draggable", a_value)
-			check attached draggable as al_attribute then attributes.force (al_attribute) end
+			check attached draggable as al_attribute then attributes.force (al_attribute, "draggable") end
 		end
 
 	dropzone: detachable HTML_STRING_ATTRIBUTE
@@ -205,7 +205,7 @@ feature -- Global Attributes
 				(a_value.has_substring ({STRING_32} "string:") or a_value.has_substring ( {STRING_32} "file:"))
 		do
 			create dropzone.make_with_value ("dropzone", a_value)
-			check attached dropzone as al_attribute then attributes.force (al_attribute) end
+			check attached dropzone as al_attribute then attributes.force (al_attribute, "dropzone") end
 		end
 
 	hidden: detachable HTML_STRING_ATTRIBUTE
@@ -219,7 +219,7 @@ feature -- Global Attributes
 			in_list: (<<"hidden", "">>).has (a_value)
 		do
 			create hidden.make_with_value ("hidden", a_value)
-			check attached hidden as al_attribute then attributes.force (al_attribute) end
+			check attached hidden as al_attribute then attributes.force (al_attribute, "hidden") end
 		end
 
 	id: detachable HTML_STRING_ATTRIBUTE
@@ -242,7 +242,7 @@ feature -- Global Attributes
 			no_spaces: not a_value.has (' ')
 		do
 			create id.make_with_value ("id", a_value)
-			check attached id as al_attribute then attributes.force (al_attribute) end
+			check attached id as al_attribute then attributes.force (al_attribute, "id") end
 		end
 
 	lang: detachable HTML_STRING_ATTRIBUTE
@@ -257,7 +257,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://tools.ietf.org/html/bcp47"
 		do
 			create lang.make_with_value ("lang", a_value)
-			check attached lang as al_attribute then attributes.force (al_attribute) end
+			check attached lang as al_attribute then attributes.force (al_attribute, "lang") end
 		end
 
 	spellcheck: detachable HTML_BOOLEAN_ATTRIBUTE
@@ -269,7 +269,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create spellcheck.make_with_value ("spellcheck", a_value)
-			check attached spellcheck as al_attribute then attributes.force (al_attribute) end
+			check attached spellcheck as al_attribute then attributes.force (al_attribute, "spellcheck") end
 		end
 
 	style: detachable HTML_STRING_ATTRIBUTE
@@ -283,7 +283,7 @@ feature -- Global Attributes
 			not_empty: not a_value.is_empty
 		do
 			create style.make_with_value ("style", a_value)
-			check attached style as al_attribute then attributes.force (al_attribute) end
+			check attached style as al_attribute then attributes.force (al_attribute, "style") end
 		end
 
 	tabindex: detachable HTML_STRING_ATTRIBUTE
@@ -301,7 +301,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create tabindex.make_with_value ("tabindex", a_value)
-			check attached tabindex as al_attribute then attributes.force (al_attribute) end
+			check attached tabindex as al_attribute then attributes.force (al_attribute, "tabindex") end
 		end
 
 	title: detachable HTML_STRING_ATTRIBUTE
@@ -313,7 +313,7 @@ feature -- Global Attributes
 			EIS: "name=specification", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#common.attrs.core"
 		do
 			create title.make_with_value ("title", a_value)
-			check attached title as al_attribute then attributes.force (al_attribute) end
+			check attached title as al_attribute then attributes.force (al_attribute, "title") end
 		end
 
 feature -- Output

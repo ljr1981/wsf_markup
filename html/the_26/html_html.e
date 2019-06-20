@@ -116,7 +116,7 @@ feature -- Attributes: manifest
 			not_empty: not a_value.is_empty
 		do
 			create manifest.make_with_value ("manifest", a_value)
-			check attached manifest as al_attribute then attributes.force (al_attribute) end
+			check attached manifest as al_attribute then attributes.force (al_attribute, "manifest") end
 		end
 
 end

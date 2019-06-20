@@ -45,7 +45,7 @@ feature -- Attributes: src
 			not_empty: not a_value.is_empty
 		do
 			create src.make_with_value ("src", a_value)
-			check attached src as al_attribute then attributes.force (al_attribute) end
+			check attached src as al_attribute then attributes.force (al_attribute, "src") end
 		end
 
 feature -- Attributes: alt
@@ -61,7 +61,7 @@ feature -- Attributes: alt
 			not_empty: not a_value.is_empty
 		do
 			create alt.make_with_value ("alt", a_value)
-			check attached alt as al_attribute then attributes.force (al_attribute) end
+			check attached alt as al_attribute then attributes.force (al_attribute, "alt") end
 		end
 
 feature -- Attributes: height
@@ -77,7 +77,7 @@ feature -- Attributes: height
 			non_negative: a_value >= 0
 		do
 			create height.make_with_value ("height", a_value)
-			check attached height as al_attribute then attributes.force (al_attribute) end
+			check attached height as al_attribute then attributes.force (al_attribute, "height") end
 		end
 
 feature -- Attributes: width
@@ -93,7 +93,7 @@ feature -- Attributes: width
 			non_negative: a_value >= 0
 		do
 			create width.make_with_value ("width", a_value)
-			check attached width as al_attribute then attributes.force (al_attribute) end
+			check attached width as al_attribute then attributes.force (al_attribute, "width") end
 		end
 
 feature -- Attributes: usemap
@@ -109,7 +109,7 @@ feature -- Attributes: usemap
 			not_empty: not a_value.is_empty
 		do
 			create usemap.make_with_value ("usemap", a_value)
-			check attached usemap as al_attribute then attributes.force (al_attribute) end
+			check attached usemap as al_attribute then attributes.force (al_attribute, "usemap") end
 		end
 
 feature -- Attributes: ismap
@@ -125,7 +125,7 @@ feature -- Attributes: ismap
 			ismap_or_empty: a_value.same_string ("ismap") xor a_value.is_empty
 		do
 			create ismap.make_with_value ("ismap", a_value)
-			check attached ismap as al_attribute then attributes.force (al_attribute) end
+			check attached ismap as al_attribute then attributes.force (al_attribute, "ismap") end
 		end
 
 feature -- Attributes: border

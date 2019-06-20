@@ -36,7 +36,7 @@ feature -- Attributes: onafterprint
 			not_empty: not a_value.is_empty
 		do
 			create onafterprint.make_with_value ("onafterprint", a_value)
-			check attached onafterprint as al_attribute then attributes.force (al_attribute) end
+			check attached onafterprint as al_attribute then attributes.force (al_attribute, "onafterprint") end
 		end
 
 feature -- Attributes: onbeforeprint
@@ -51,7 +51,7 @@ feature -- Attributes: onbeforeprint
 			not_empty: not a_value.is_empty
 		do
 			create onbeforeprint.make_with_value ("onbeforeprint", a_value)
-			check attached onbeforeprint as al_attribute then attributes.force (al_attribute) end
+			check attached onbeforeprint as al_attribute then attributes.force (al_attribute, "onbeforeprint") end
 		end
 
 feature -- Attributes: onbeforeunload
@@ -66,7 +66,7 @@ feature -- Attributes: onbeforeunload
 			not_empty: not a_value.is_empty
 		do
 			create onbeforeunload.make_with_value ("onbeforeunload", a_value)
-			check attached onbeforeunload as al_attribute then attributes.force (al_attribute) end
+			check attached onbeforeunload as al_attribute then attributes.force (al_attribute, "onbeforeunload") end
 		end
 
 feature -- Attributes: onblur
@@ -81,7 +81,7 @@ feature -- Attributes: onblur
 			not_empty: not a_value.is_empty
 		do
 			create onblur.make_with_value ("onblur", a_value)
-			check attached onblur as al_attribute then attributes.force (al_attribute) end
+			check attached onblur as al_attribute then attributes.force (al_attribute, "onblur") end
 		end
 
 feature -- Attributes: onerror
@@ -96,7 +96,7 @@ feature -- Attributes: onerror
 			not_empty: not a_value.is_empty
 		do
 			create onerror.make_with_value ("onerror", a_value)
-			check attached onerror as al_attribute then attributes.force (al_attribute) end
+			check attached onerror as al_attribute then attributes.force (al_attribute, "onerror") end
 		end
 
 feature -- Attributes: onfocus
@@ -111,7 +111,7 @@ feature -- Attributes: onfocus
 			not_empty: not a_value.is_empty
 		do
 			create onfocus.make_with_value ("onfocus", a_value)
-			check attached onfocus as al_attribute then attributes.force (al_attribute) end
+			check attached onfocus as al_attribute then attributes.force (al_attribute, "onfocus") end
 		end
 
 feature -- Attributes: onhashchange
@@ -126,7 +126,7 @@ feature -- Attributes: onhashchange
 			not_empty: not a_value.is_empty
 		do
 			create onhashchange.make_with_value ("onhashchange", a_value)
-			check attached onhashchange as al_attribute then attributes.force (al_attribute) end
+			check attached onhashchange as al_attribute then attributes.force (al_attribute, "onhashchange") end
 		end
 
 feature -- Attributes: onload
@@ -141,7 +141,7 @@ feature -- Attributes: onload
 			not_empty: not a_value.is_empty
 		do
 			create onload.make_with_value ("onload", a_value)
-			check attached onload as al_attribute then attributes.force (al_attribute) end
+			check attached onload as al_attribute then attributes.force (al_attribute, "onload") end
 		end
 
 feature -- Attributes: onmessage
@@ -156,7 +156,7 @@ feature -- Attributes: onmessage
 			not_empty: not a_value.is_empty
 		do
 			create onmessage.make_with_value ("onmessage", a_value)
-			check attached onmessage as al_attribute then attributes.force (al_attribute) end
+			check attached onmessage as al_attribute then attributes.force (al_attribute, "onmessage") end
 		end
 
 feature -- Attributes: onoffline
@@ -171,7 +171,7 @@ feature -- Attributes: onoffline
 			not_empty: not a_value.is_empty
 		do
 			create onoffline.make_with_value ("onoffline", a_value)
-			check attached onoffline as al_attribute then attributes.force (al_attribute) end
+			check attached onoffline as al_attribute then attributes.force (al_attribute, "onoffline") end
 		end
 
 feature -- Attributes: ononline
@@ -186,7 +186,7 @@ feature -- Attributes: ononline
 			not_empty: not a_value.is_empty
 		do
 			create ononline.make_with_value ("ononline", a_value)
-			check attached ononline as al_attribute then attributes.force (al_attribute) end
+			check attached ononline as al_attribute then attributes.force (al_attribute, "ononline") end
 		end
 
 feature -- Attributes: onpopstate
@@ -201,7 +201,7 @@ feature -- Attributes: onpopstate
 			not_empty: not a_value.is_empty
 		do
 			create onpopstate.make_with_value ("onpopstate", a_value)
-			check attached onpopstate as al_attribute then attributes.force (al_attribute) end
+			check attached onpopstate as al_attribute then attributes.force (al_attribute, "onpopstate") end
 		end
 
 feature -- Attributes: onresize
@@ -216,7 +216,7 @@ feature -- Attributes: onresize
 			not_empty: not a_value.is_empty
 		do
 			create onresize.make_with_value ("onresize", a_value)
-			check attached onresize as al_attribute then attributes.force (al_attribute) end
+			check attached onresize as al_attribute then attributes.force (al_attribute, "onresize") end
 		end
 
 feature -- Attributes: onstorage
@@ -231,7 +231,7 @@ feature -- Attributes: onstorage
 			not_empty: not a_value.is_empty
 		do
 			create onstorage.make_with_value ("onstorage", a_value)
-			check attached onstorage as al_attribute then attributes.force (al_attribute) end
+			check attached onstorage as al_attribute then attributes.force (al_attribute, "onstorage") end
 		end
 
 feature -- Attributes: onunload
@@ -246,7 +246,7 @@ feature -- Attributes: onunload
 			not_empty: not a_value.is_empty
 		do
 			create onunload.make_with_value ("onunload", a_value)
-			check attached onunload as al_attribute then attributes.force (al_attribute) end
+			check attached onunload as al_attribute then attributes.force (al_attribute, "onunload") end
 		end
 
 end

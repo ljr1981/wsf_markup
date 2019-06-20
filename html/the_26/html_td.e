@@ -53,7 +53,7 @@ feature -- Attributes: colspan
 			non_negative: a_value > 0
 		do
 			create colspan.make_with_value ("colspan", a_value)
-			check attached colspan as al_attribute then attributes.force (al_attribute) end
+			check attached colspan as al_attribute then attributes.force (al_attribute, "colspan") end
 		end
 
 feature -- Attributes: rowspan
@@ -69,7 +69,7 @@ feature -- Attributes: rowspan
 			non_negative: a_value > 0
 		do
 			create rowspan.make_with_value ("rowspan", a_value)
-			check attached rowspan as al_attribute then attributes.force (al_attribute) end
+			check attached rowspan as al_attribute then attributes.force (al_attribute, "rowspan") end
 		end
 
 feature -- Attributes: headers
@@ -98,7 +98,7 @@ feature -- Attributes: headers
 				end
 			end
 			create headers.make_with_value ("headers", l_value)
-			check attached headers as al_attribute then attributes.force (al_attribute) end
+			check attached headers as al_attribute then attributes.force (al_attribute, "headers") end
 		end
 
 end

@@ -26,7 +26,7 @@ feature -- Attributes: name
 			not_empty: not a_value.is_empty
 		do
 			create name.make_with_value ("name", a_value)
-			check attached name as al_attribute then attributes.force (al_attribute) end
+			check attached name as al_attribute then attributes.force (al_attribute, "name") end
 		end
 
 feature -- Attributes: disabled
@@ -42,7 +42,7 @@ feature -- Attributes: disabled
 			scoped_or_empty: a_value.same_string ("disabled") xor a_value.is_empty
 		do
 			create disabled.make_with_value ("disabled", a_value)
-			check attached disabled as al_attribute then attributes.force (al_attribute) end
+			check attached disabled as al_attribute then attributes.force (al_attribute, "disabled") end
 		end
 
 feature -- Attributes: form_id
@@ -58,7 +58,7 @@ feature -- Attributes: form_id
 			not_empty: not a_value.is_empty
 		do
 			create form_id.make_with_value ("form", a_value)
-			check attached form_id as al_attribute then attributes.force (al_attribute) end
+			check attached form_id as al_attribute then attributes.force (al_attribute, "form") end
 		end
 
 	set_with_form (a_form: HTML_FORM)
@@ -81,11 +81,15 @@ feature -- Attributes: type
 	set_type (a_value: STRING_32)
 			-- type = "submit"
 			--	Specifies that its button element is a button for submitting a form.
+		note
+			warning: "[
+				It turns out that "submit" is not the ONLY value that is legal.
+				]"
 		require
-			not_empty: a_value.same_string ("submit")
+			not_empty: not a_value.is_empty
 		do
 			create type.make_with_value ("type", a_value)
-			check attached type as al_attribute then attributes.force (al_attribute) end
+			check attached type as al_attribute then attributes.force (al_attribute, "type") end
 		end
 
 feature -- Attributes: value
@@ -101,7 +105,7 @@ feature -- Attributes: value
 			not_empty: not a_value.is_empty
 		do
 			create value.make_with_value ("value", a_value)
-			check attached value as al_attribute then attributes.force (al_attribute) end
+			check attached value as al_attribute then attributes.force (al_attribute, "value") end
 		end
 
 feature -- Attributes: formaction
@@ -117,7 +121,7 @@ feature -- Attributes: formaction
 			not_empty: not a_value.is_empty
 		do
 			create formaction.make_with_value ("formaction", a_value)
-			check attached formaction as al_attribute then attributes.force (al_attribute) end
+			check attached formaction as al_attribute then attributes.force (al_attribute, "formaction") end
 		end
 
 feature -- Attributes: autofocus
@@ -133,7 +137,7 @@ feature -- Attributes: autofocus
 			autofocus: a_value.same_string ("autofocus") xor a_value.is_empty
 		do
 			create autofocus.make_with_value ("autofocus", a_value)
-			check attached autofocus as al_attribute then attributes.force (al_attribute) end
+			check attached autofocus as al_attribute then attributes.force (al_attribute, "autofocus") end
 		end
 
 feature -- Attributes: formenctype
@@ -152,7 +156,7 @@ feature -- Attributes: formenctype
 						a_value.same_string ("text/plain")
 		do
 			create formenctype.make_with_value ("formenctype", a_value)
-			check attached formenctype as al_attribute then attributes.force (al_attribute) end
+			check attached formenctype as al_attribute then attributes.force (al_attribute, "formenctype") end
 		end
 
 feature -- Attributes: formmethod
@@ -168,7 +172,7 @@ feature -- Attributes: formmethod
 			get_or_post: a_value.same_string ("get") xor a_value.same_string ("post")
 		do
 			create formmethod.make_with_value ("formmethod", a_value)
-			check attached formmethod as al_attribute then attributes.force (al_attribute) end
+			check attached formmethod as al_attribute then attributes.force (al_attribute, "formmethod") end
 		end
 
 feature -- Attributes: formtarget
@@ -190,7 +194,7 @@ feature -- Attributes: formtarget
 			not_empty: not a_value.is_empty
 		do
 			create formtarget.make_with_value ("formtarget", a_value)
-			check attached formtarget as al_attribute then attributes.force (al_attribute) end
+			check attached formtarget as al_attribute then attributes.force (al_attribute, "formtarget") end
 		end
 
 feature -- Attributes: formnovalidate
@@ -206,7 +210,7 @@ feature -- Attributes: formnovalidate
 			valid: a_value.same_string ("formnovalidate") xor a_value.is_empty
 		do
 			create formnovalidate.make_with_value ("formnovalidate", a_value)
-			check attached formnovalidate as al_attribute then attributes.force (al_attribute) end
+			check attached formnovalidate as al_attribute then attributes.force (al_attribute, "formnovalidate") end
 		end
 
 end

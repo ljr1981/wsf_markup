@@ -32,7 +32,7 @@ feature -- Attribute: value
 			--	and is not simply presentational.
 		do
 			create value.make_with_value ("value", a_value)
-			check attached value as al_attribute then attributes.force (al_attribute) end
+			check attached value as al_attribute then attributes.force (al_attribute, "value") end
 		end
 
 end

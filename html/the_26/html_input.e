@@ -33,7 +33,7 @@ feature -- Attributes: type
 			else
 				create type.make_with_value ("type", a_value)
 			end
-			check attached type as al_attribute then attributes.force (al_attribute) end
+			check attached type as al_attribute then attributes.force (al_attribute, "type") end
 		end
 
 feature -- Attributes: type-constants

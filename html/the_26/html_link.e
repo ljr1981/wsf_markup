@@ -28,7 +28,7 @@ feature -- Attributes: href
 			not_empty: not a_value.is_empty
 		do
 			create href.make_with_value ("href", a_value)
-			check attached href as al_attribute then attributes.force (al_attribute) end
+			check attached href as al_attribute then attributes.force (al_attribute, "href") end
 		end
 
 	set_hyperlink_reference (a_value: STRING_32)
@@ -62,7 +62,7 @@ feature -- Attributes: rel
 			not_empty_items: across a_values as ic all not ic.item.is_empty end
 		do
 			create rel.make_with_values ("rel", a_values)
-			check attached rel as al_attribute then attributes.force (al_attribute) end
+			check attached rel as al_attribute then attributes.force (al_attribute, "rel") end
 		end
 
 	set_link_relationships (a_values: ARRAY [STRING_32])
@@ -89,7 +89,7 @@ feature -- Attributes: hreflang
 			not_empty: not a_value.is_empty
 		do
 			create hreflang.make_with_value ("hreflang", a_value)
-			check attached hreflang as al_attribute then attributes.force (al_attribute) end
+			check attached hreflang as al_attribute then attributes.force (al_attribute, "hreflang") end
 		end
 
 feature -- Attributes: media
@@ -107,7 +107,7 @@ feature -- Attributes: media
 			not_empty: not a_value.is_empty
 		do
 			create media.make_with_value ("media", a_value)
-			check attached media as al_attribute then attributes.force (al_attribute) end
+			check attached media as al_attribute then attributes.force (al_attribute, "media") end
 		end
 
 feature -- Attributes: type
@@ -128,7 +128,7 @@ feature -- Attributes: type
 			not_empty: not a_value.is_empty
 		do
 			create type.make_with_value ("type", a_value)
-			check attached type as al_attribute then attributes.force (al_attribute) end
+			check attached type as al_attribute then attributes.force (al_attribute, "type") end
 		end
 
 	set_mime_type (a_value: STRING_32)
@@ -166,7 +166,7 @@ feature -- Attributes: sizes
 			else
 				create sizes.make_with_values ("sizes", <<a_values [1], "x", a_values [2]>>)
 			end
-			check attached sizes as al_attribute then attributes.force (al_attribute) end
+			check attached sizes as al_attribute then attributes.force (al_attribute, "sizes") end
 		end
-		
+
 end

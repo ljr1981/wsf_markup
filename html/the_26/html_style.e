@@ -31,7 +31,7 @@ feature -- Attributes: type
 			not_empty: not a_value.is_empty
 		do
 			create type.make_with_value ("type", a_value)
-			check attached type as al_attribute then attributes.force (al_attribute) end
+			check attached type as al_attribute then attributes.force (al_attribute, "type") end
 		end
 
 feature -- Attributes: media
@@ -49,7 +49,7 @@ feature -- Attributes: media
 			not_empty: not a_value.is_empty
 		do
 			create media.make_with_value ("media", a_value)
-			check attached media as al_attribute then attributes.force (al_attribute) end
+			check attached media as al_attribute then attributes.force (al_attribute, "media") end
 		end
 
 feature -- Attributes: scoped
@@ -69,7 +69,7 @@ feature -- Attributes: scoped
 			scoped_or_empty: a_value.same_string ("scoped") xor a_value.is_empty
 		do
 			create scoped.make_with_value ("scoped", a_value)
-			check attached scoped as al_attribute then attributes.force (al_attribute) end
+			check attached scoped as al_attribute then attributes.force (al_attribute, "scoped") end
 		end
 
 end

@@ -52,7 +52,7 @@ feature -- Attributes: type
 			not_empty: not a_value.is_empty
 		do
 			create type.make_with_value ("type", a_value)
-			check attached type as al_attribute then attributes.force (al_attribute) end
+			check attached type as al_attribute then attributes.force (al_attribute, "type") end
 		end
 
 feature -- Attributes: src
@@ -68,7 +68,7 @@ feature -- Attributes: src
 			not_empty: not a_value.is_empty
 		do
 			create src.make_with_value ("src", a_value)
-			check attached src as al_attribute then attributes.force (al_attribute) end
+			check attached src as al_attribute then attributes.force (al_attribute, "src") end
 		end
 
 feature -- Attributes: defer
@@ -86,7 +86,7 @@ feature -- Attributes: defer
 			defer_or_empty: a_value.same_string ("defer") xor a_value.is_empty
 		do
 			create defer.make_with_value ("defer", a_value)
-			check attached defer as al_attribute then attributes.force (al_attribute) end
+			check attached defer as al_attribute then attributes.force (al_attribute, "defer") end
 		end
 
 feature -- Attributes: async
@@ -104,7 +104,7 @@ feature -- Attributes: async
 			defer_or_empty: a_value.same_string ("async") xor a_value.is_empty
 		do
 			create async.make_with_value ("async", a_value)
-			check attached async as al_attribute then attributes.force (al_attribute) end
+			check attached async as al_attribute then attributes.force (al_attribute, "async") end
 		end
 
 feature -- Attributes: charset
@@ -129,7 +129,7 @@ feature -- Attributes: charset
 			EIS: "name=character_sets", "src=https://www.w3.org/TR/2012/WD-html-markup-20120320/spec.html#refsCharacterSets"
 		do
 			create charset.make_with_value ("charset", a_value)
-			check attached charset as al_attribute then attributes.force (al_attribute) end
+			check attached charset as al_attribute then attributes.force (al_attribute, "charset") end
 		end
 
 note

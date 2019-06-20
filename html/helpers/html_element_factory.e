@@ -30,7 +30,7 @@ feature -- Temporary HTML builder
 			across
 				a_attributes as ic
 			loop
-				Result.attributes.force (ic.item)
+				Result.attributes.force (ic.item, a_tag_name)
 			end
 		end
 	last_temp: HTML_TEMP_ELEMENT attribute create Result end

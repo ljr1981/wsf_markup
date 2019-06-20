@@ -26,7 +26,7 @@ feature -- Attributes: action
 			not_empty: not a_value.is_empty
 		do
 			create action.make_with_value ("action", a_value)
-			check attached action as al_attribute then attributes.force (al_attribute) end
+			check attached action as al_attribute then attributes.force (al_attribute, "action") end
 		end
 
 
@@ -44,7 +44,7 @@ feature -- Attributes: method
 			get_or_post: a_value.same_string ("get") xor a_value.same_string ("post")
 		do
 			create method.make_with_value ("method", a_value)
-			check attached method as al_attribute then attributes.force (al_attribute) end
+			check attached method as al_attribute then attributes.force (al_attribute, "method") end
 		end
 
 
@@ -64,7 +64,7 @@ feature -- Attributes: enctype
 								a_value.same_string_general ("text/plain")
 		do
 			create enctype.make_with_value ("enctype", a_value)
-			check attached enctype as al_attribute then attributes.force (al_attribute) end
+			check attached enctype as al_attribute then attributes.force (al_attribute, "enctype") end
 		end
 
 
@@ -83,7 +83,7 @@ feature -- Attributes: name
 			not_empty: not a_value.is_empty
 		do
 			create name.make_with_value ("name", a_value)
-			check attached name as al_attribute then attributes.force (al_attribute) end
+			check attached name as al_attribute then attributes.force (al_attribute, "name") end
 		end
 
 
@@ -106,7 +106,7 @@ feature -- Attributes: accept-charset
 			not_empty: not a_value.is_empty
 		do
 			create accept_charset.make_with_value ("accept-charset", a_value)
-			check attached accept_charset as al_attribute then attributes.force (al_attribute) end
+			check attached accept_charset as al_attribute then attributes.force (al_attribute, "accept-charset") end
 		end
 
 
@@ -125,7 +125,7 @@ feature -- Attributes: novalidate
 			not_empty: not a_value.is_empty
 		do
 			create novalidate.make_with_value ("novalidate", a_value)
-			check attached novalidate as al_attribute then attributes.force (al_attribute) end
+			check attached novalidate as al_attribute then attributes.force (al_attribute, "novalidate") end
 		end
 
 
@@ -150,7 +150,7 @@ feature -- Attributes: target
 			not_empty: not a_value.is_empty
 		do
 			create target.make_with_value ("target", a_value)
-			check attached target as al_attribute then attributes.force (al_attribute) end
+			check attached target as al_attribute then attributes.force (al_attribute, "target") end
 		end
 
 feature -- Attributes: autocomplete
@@ -170,7 +170,7 @@ feature -- Attributes: autocomplete
 			not_empty: not a_value.is_empty
 		do
 			create autocomplete.make_with_value ("autocomplete", a_value)
-			check attached autocomplete as al_attribute then attributes.force (al_attribute) end
+			check attached autocomplete as al_attribute then attributes.force (al_attribute, "autocomplete") end
 		end
 
 
