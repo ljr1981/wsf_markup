@@ -20,6 +20,18 @@ note
 class
 	HTML_ELEMENT_FACTORY
 
+feature -- Ops
+
+	href_uri (a_href: STRING): STRING
+		do
+			Result := a_href
+		end
+
+	link_text (a_text: STRING): STRING
+		do
+			Result := a_text
+		end
+
 feature -- Temporary HTML builder
 
 	temp_element (a_tag_name: STRING; a_attributes: ARRAY [HTML_ATTRIBUTE [ANY]]): HTML_TEMP_ELEMENT
