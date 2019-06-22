@@ -139,6 +139,12 @@ feature -- Global Attributes
 			check attached classification as al_attribute then attributes.force (al_attribute, "class") end
 		end
 
+	add_class (a_value: STRING_32)
+			--
+		do
+			check attached classification as al_class then al_class.values.force (a_value) end
+		end
+
 	contenteditable: detachable HTML_BOOLEAN_ATTRIBUTE
 			-- Specifies whether the contents of the element are editable.
 
