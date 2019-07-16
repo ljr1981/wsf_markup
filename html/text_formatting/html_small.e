@@ -8,6 +8,10 @@ class
 inherit
 	HTML_TEXT_FORMATTING_ELEMENT
 
+create
+	default_create,
+	make_with_text
+
 feature -- Constants
 
 	tag_name: STRING = "small"

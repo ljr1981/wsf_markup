@@ -37,6 +37,9 @@
 		<option profile="false">
 		</option>
 		<setting name="console_application" value="false"/>
+		<capability>
+			<concurrency support="none"/>
+		</capability>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
 	</target>

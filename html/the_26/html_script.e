@@ -9,23 +9,45 @@ class
 
 inherit
 	HTML_ELEMENT
+		redefine
+			default_create
+		end
 
 create
 	default_create,
 	make_with_type,
-	make_with_type_javascript
+	make_with_type_javascript,
+	make_with_integrity_and_CORS
 
-feature {NONE} -- Initialization
+feature {NONE} -- Initialize
+
+	default_create
+			--<Precursor>
+		do
+			Precursor
+			force_full_end_tag := True
+		end
+
+	make_with_integrity_and_CORS (a_src, a_integrity_SHA, a_CORS: STRING_32)
+			--
+		do
+			default_create
+			set_src (a_src)
+			set_integrity (a_integrity_SHA)
+			set_crossorigin (a_CORS)
+		end
 
 	make_with_type (a_type: STRING_32)
 			--
 		do
+			default_create
 			set_type (a_type)
 		end
 
 	make_with_type_javascript
 			--
 		do
+			default_create
 			set_type ("javascript")
 		end
 
@@ -33,6 +55,48 @@ feature -- Constants
 
 	tag_name: STRING = "script"
 			-- <Precursor>
+
+feature -- Attributes: integrity
+
+	integrity: detachable HTML_STRING_ATTRIBUTE
+
+	set_integrity (a_value: STRING_32)
+			-- This specification defines a mechanism by which user agents
+			--	may verify that a fetched resource has been delivered without
+			--	unexpected manipulation.
+		note
+			purpose: "Both attributes have been added to Bootstrap CDN to implement Subresource Integrity. See SRI EIS below."
+			EIS: "src=https://www.w3.org/TR/SRI/"
+			EIS: "src=https://stackoverflow.com/questions/32039568/what-are-the-integrity-and-crossorigin-attributes"
+		require
+			not_empty: not a_value.is_empty
+		do
+			create integrity.make_with_value ("integrity", a_value)
+			check attached integrity as al_attribute then attributes.force (al_attribute, "integrity") end
+		end
+
+feature -- Attributes: crossorigin
+
+	crossorigin: detachable HTML_STRING_ATTRIBUTE
+
+	set_crossorigin (a_value: STRING_32)
+			-- When the request doesn't match Same Origin Policy, the crossorigin
+			--	attribute MUST be present for the integrity of the file to be checked.
+			--	With an integrity set on an external origin and a missing crossorigin
+			--	the browser will choose to 'fail-open' which means it will load the
+			--	resource as if the integrity attribute was not set.
+		note
+			purpose: "Both attributes have been added to Bootstrap CDN to implement Subresource Integrity. See SRI EIS below."
+			EIS: "src=https://www.w3.org/TR/SRI/"
+			EIS: "src=https://www.npmjs.com/package/ember-cli-sri#crossorigin-attribute"
+			EIS: "src=https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-crossorigin"
+			EIS: "src=https://stackoverflow.com/questions/32039568/what-are-the-integrity-and-crossorigin-attributes"
+		require
+			not_empty: not a_value.is_empty
+		do
+			create crossorigin.make_with_value ("crossorigin", a_value)
+			check attached crossorigin as al_attribute then attributes.force (al_attribute, "crossorigin") end
+		end
 
 feature -- Attributes: type
 

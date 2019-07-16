@@ -56,7 +56,7 @@ feature -- Test routines
 			assert_strings_equal ("a", "<a/>", last_hyperlink.html_out)
 
 			new_script
-			assert_strings_equal ("script", "<script/>", last_script.html_out)
+			assert_strings_equal ("script", "<script></script>", last_script.html_out)
 
 			new_link
 			assert_strings_equal ("link", "<link/>", last_link.html_out)
@@ -211,13 +211,16 @@ feature -- Test routines
 		do
 			create l_script
 			l_script.set_type ("javascript")
-			assert_strings_equal ("type_is_javascript", "<script type=%"javascript%"/>", l_script.html_out)
+			assert_strings_equal ("type_is_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
 
 			create l_script.make_with_type ("javascript")
-			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"/>", l_script.html_out)
+			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
 
 			create l_script.make_with_type_javascript
-			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"/>", l_script.html_out)
+			assert_strings_equal ("make_with_type_javascript", "<script type=%"javascript%"></script>", l_script.html_out)
+
+			create last_script.make_with_integrity_and_cors ("src", "sha", "cors")
+			assert_strings_equal ("sha_and_cors", "<script src=%"src%" integrity=%"sha%" crossorigin=%"cors%"></script>", last_script.html_out)
 
 		end
 

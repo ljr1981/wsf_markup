@@ -81,6 +81,18 @@ feature -- Attributes
 			create Result.make (0)
 		end
 
+feature -- Attributes: Style
+
+	style_attributes: HASH_TABLE [HTML_STYLE_ATTRIBUTE, STRING]
+			-- The inline style attribute applied directly to HTML elements.
+			-- See also <style> and CSS for more.
+		note
+			EIS: "src=https://www.w3schools.com/tags/att_style.asp"
+			EIS: "src=https://www.w3schools.com/css/css_howto.asp"
+		attribute
+			create Result.make (0)
+		end
+
 feature -- Temp Attributes
 
 	set_temp_attribute (a_name, a_value: STRING_32)
@@ -338,7 +350,9 @@ feature -- Output
 					Result.append_string_general (ic_text.item.html_out)
 				end
 			end
-			if sub_elements.is_empty and not attached text and text_embedded.is_empty and not end_tag_out.is_empty then
+			if
+				sub_elements.is_empty and not attached text and text_embedded.is_empty and not end_tag_out.is_empty and not force_full_end_tag
+			then
 				Result.insert_character ('/', Result.count)
 			else
 				across
@@ -378,7 +392,9 @@ feature -- Output
 					Result.append_string_general (ic_text.item.html_out)
 				end
 			end
-			if sub_elements.is_empty and not attached text and text_embedded.is_empty then
+			if
+				sub_elements.is_empty and not attached text and text_embedded.is_empty and not force_full_end_tag
+			then
 				Result.insert_character ('/', Result.count)
 			else
 				across
@@ -394,11 +410,25 @@ feature -- Output
 
 	start_tag_out: STRING_32
 			-- <Precursor>
+		local
+			l_style_attr: STRING_32
 		do
 			create Result.make_empty
 			if not tag_name.is_empty then
 				Result.append_character (Left_enclosing_character)
 				Result.append_string_general (tag_name)
+					-- set style attribute(s) (if any)
+				if not style_attributes.is_empty and then not attributes.has_key ("style") then
+					create l_style_attr.make_empty
+					across
+						style_attributes as ic
+					loop
+						l_style_attr.append_string_general (ic.item.attribute_out)
+						l_style_attr.append_character (';')
+					end
+					set_style (l_style_attr)
+				end
+					-- All attributes
 				across
 					attributes as ic
 				loop
@@ -427,6 +457,9 @@ feature -- Constants
 			-- Name of tag
 		deferred
 		end
+
+	force_full_end_tag: BOOLEAN
+			-- Force use of full end-tag vs. "/>"
 
 	left_enclosing_character: CHARACTER = '<'
 			-- <Precursor>

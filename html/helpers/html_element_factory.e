@@ -336,6 +336,27 @@ feature -- <sup>
 	sup: HTML_SUP do new_sup; Result := last_sup end
 	superscript_text (a_text: STRING_32): STRING_32 do new_sup; last_sup.set_text (a_text); Result := last_sup.html_out end
 
+feature -- <h4>
+
+	new_h4 do create last_h4 end
+	last_h4: HTML_H4 attribute create Result end
+	h4: HTML_H4 do new_h4; Result := last_h4 end
+	h4_with_text (a_text: STRING_32): HTML_H4 do new_h4; Result := last_h4; last_h4.set_text (a_text) end
+
+feature -- <h5>
+
+	new_h5 do create last_h5 end
+	last_h5: HTML_H5 attribute create Result end
+	h5: HTML_H5 do new_h5; Result := last_h5 end
+	h5_with_text (a_text: STRING_32): HTML_H5 do new_h5; Result := last_h5; last_h5.set_text (a_text) end
+
+feature -- <h6>
+
+	new_h6 do create last_h6 end
+	last_h6: HTML_H6 attribute create Result end
+	h6: HTML_H6 do new_h6; Result := last_h6 end
+	h6_with_text (a_text: STRING_32): HTML_H6 do new_h6; Result := last_h6; last_h6.set_text (a_text) end
+
 feature -- Raw Text
 
 	new_raw_text do create last_raw_text end

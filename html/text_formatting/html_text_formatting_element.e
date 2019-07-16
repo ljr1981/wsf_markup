@@ -8,4 +8,12 @@ deferred class
 inherit
 	HTML_ELEMENT
 
+feature {NONE} -- Initialization
+
+	make_with_text (a_text: STRING_32)
+			-- Initialize with `a_text'.
+		do
+			set_text (a_text)
+		end
+
 end

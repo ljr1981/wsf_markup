@@ -84,6 +84,11 @@ feature -- Access
 		deferred
 		end
 
+	key_value_separator: CHARACTER_32
+		do
+			Result := '='
+		end
+
 feature -- Settings
 
 	reset_values
@@ -140,7 +145,7 @@ feature -- Output
 		do
 			create Result.make_empty
 			Result.append_string_general (name.to_string_32)
-			Result.append_character ({CHARACTER_32} '=')
+			Result.append_character (key_value_separator)
 			if attached quote as al_quote and then al_quote /= '%U' then
 				Result.append_character (al_quote)
 				Result.append_string_general (value_out)
